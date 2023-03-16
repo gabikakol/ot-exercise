@@ -1,0 +1,118 @@
+kakolgab@gab:~/Desktop/ot_v1/files$ git log --stat | cat
+commit dfdbc4ef77006ed8728e636312dfe7b766a7872a
+Author: gabikakol <gabriela.kakol@helsinki.fi>
+Date:   Thu Mar 16 14:21:30 2023 +0200
+
+    task 11
+
+ files/file1.txt  | 0
+ files/file2.txt  | 0
+ files/file22.txt | 1 +
+ files/file3.txt  | 1 +
+ 4 files changed, 2 insertions(+)
+
+commit 6fe64e7525f7c3310a173b52ebd0545c30012033
+Author: gabikakol <gabriela.kakol@helsinki.fi>
+Date:   Thu Mar 16 14:17:00 2023 +0200
+
+    files created
+
+ files/file1.txt | 0
+ files/file2.txt | 0
+ files/file3.txt | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 3b90bd647aee5067f5fdb385ad385f2ddde51baf
+Author: gabikakol <gabriela.kakol@helsinki.fi>
+Date:   Thu Mar 16 13:59:13 2023 +0200
+
+    trying git add p
+
+ eka.txt       | 4 ++--
+ file.txt.save | 2 --
+ third.txt     | 5 ++++-
+ 3 files changed, 6 insertions(+), 5 deletions(-)
+
+commit f0b3b1af2f19a972d4aab180422fbef6d6a2669b
+Author: gabikakol <gabriela.kakol@helsinki.fi>
+Date:   Thu Mar 16 13:56:14 2023 +0200
+
+    renaming
+
+ file.txt => eka.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 6dabe168ffa32e9666d5a13696d08f399db86134
+Author: gabikakol <gabriela.kakol@helsinki.fi>
+Date:   Thu Mar 16 13:54:56 2023 +0200
+
+    another.txt deleted
+
+ another.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 6280bee04ec2b34a2b370721432fc33c14ac8a1d
+Author: gabikakol <gabriela.kakol@helsinki.fi>
+Date:   Thu Mar 16 13:52:40 2023 +0200
+
+    poem edited
+
+ file.txt | 6 ++----
+ 1 file changed, 2 insertions(+), 4 deletions(-)
+
+commit cf8f2b28c93f24125337e2bced8996a82d25b8f3
+Author: gabikakol <gabriela.kakol@helsinki.fi>
+Date:   Thu Mar 16 13:51:45 2023 +0200
+
+    poem copied
+
+ file.txt      | 42 ++++++++++++++++++++++++++++++++++++++++++
+ file.txt.save |  2 ++
+ 2 files changed, 44 insertions(+)
+
+commit 610a3e3c19fcc47efdb1ea75bb4b0df421dccc69
+Author: gabikakol <gabriela.kakol@helsinki.fi>
+Date:   Thu Mar 16 13:48:04 2023 +0200
+
+    stuff added
+
+ stuff-file.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 19d4448e74032931b0ee6c927f6343b2c8399231
+Author: gabikakol <gabriela.kakol@helsinki.fi>
+Date:   Thu Mar 16 13:47:07 2023 +0200
+
+    second and third .txt edited
+
+ another.txt | 1 +
+ third.txt   | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit 31cd51a72869ec20d03ba49d2d36f676364f34f8
+Author: gabikakol <gabriela.kakol@helsinki.fi>
+Date:   Thu Mar 16 13:45:56 2023 +0200
+
+    third
+
+ third.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 72f66d5efc4e5ae1472c673288407ec0f3898944
+Author: gabikakol <gabriela.kakol@helsinki.fi>
+Date:   Thu Mar 16 13:40:40 2023 +0200
+
+    second commit
+
+ another.txt | 0
+ file.txt    | 1 +
+ 2 files changed, 1 insertion(+)
+
+commit 451b983ec60e639cc39dccdcd74a67fb260c96f0
+Author: gabikakol <gabriela.kakol@helsinki.fi>
+Date:   Thu Mar 16 13:38:05 2023 +0200
+
+    file.txt created
+
+ file.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
