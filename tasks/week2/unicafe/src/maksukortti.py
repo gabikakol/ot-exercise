@@ -1,19 +1,19 @@
 class Maksukortti:
     def __init__(self, saldo):
-        # saldo on senteissä
+        # saldo in cents
         self.saldo = saldo
 
-    def lataa_rahaa(self, maara):
-        self.saldo += maara
+    def load_money(self, amount):
+        self.saldo += amount
 
-    def ota_rahaa(self, maara):
-        if self.saldo < maara:
+    def spend_money(self, amount):
+        if self.saldo < amount:
             return False
 
-        self.saldo = self.saldo - maara
+        self.saldo = self.saldo - amount
         return True
 
     def __str__(self):
-        saldo_euroissa = round(self.saldo / 100, 2)
+        saldo_eur = round(self.saldo / 100, 2)
 
-        return "Kortilla on rahaa {:0.2f} euroa".format(saldo_euroissa)
+        return "Kortilla on rahaa {:0.2f} euroa".format(saldo_eur)

@@ -3,7 +3,7 @@ from maksukortti import Maksukortti
 
 class TestMaksukortti(unittest.TestCase):
     def setUp(self):
-        self.maksukortti = Maksukortti(1000)
+        self.kortti = Maksukortti(1000)
 
-    def test_luotu_kortti_on_olemassa(self):
-        self.assertNotEqual(self.maksukortti, None)
+    def test_card_exists(self):
+        self.assertNotEqual(self.kortti, None)

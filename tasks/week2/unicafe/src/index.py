@@ -6,9 +6,9 @@ def main():
     unicafe_exactum = Kassapaate()
     kortti = Maksukortti(10000)
 
-    unicafe_exactum.syo_edullisesti_kortilla(kortti)
+    unicafe_exactum.eat_cheap_card(kortti)
 
-    print(unicafe_exactum.edulliset)
+    print(unicafe_exactum.cheap)
     print(kortti)
 
 
