@@ -14,3 +14,4 @@ Software development course (Ohjelmistotekniikka), spring 2023
 # Project: travel budget app
 ## Documentation
 - [time accounting](travel-budget-app/documentation/time-accounting.md)
+- [specification](travel-budget-app/documentation/specification.md)
