@@ -1,3 +1,4 @@
+Software development course (Ohjelmistotekniikka), spring 2023
 # tasks
 ## week 1
 - [gitlog.txt](tasks/week1/gitlog.txt)
