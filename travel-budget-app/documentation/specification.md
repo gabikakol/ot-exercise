@@ -1,2 +1,4 @@
-# Visual plan
+# Specification
+
+## Visual plan
 <img src="visual-plan.jpg"> 
