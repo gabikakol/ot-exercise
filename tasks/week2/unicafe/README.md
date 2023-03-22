@@ -1,3 +1,3 @@
 ## coverage report - unicafe
 
-<img src="src/test/unicafe-coverage-report.png" width="600%"> 
+<img src="src/tests/unicafe-coverage-report.png" width="600%"> 
