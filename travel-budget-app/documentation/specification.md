@@ -1,4 +1,12 @@
 # Specification
 
-## Visual plan
-<img src="visual-plan.jpg"> 
+## Purpose
+
+## Users
+
+## User interface plan
+<img src="UI-plan.jpg"> 
+
+## Functionality
+
+## Further development
