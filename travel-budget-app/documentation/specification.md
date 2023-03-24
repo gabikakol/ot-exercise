@@ -29,14 +29,36 @@ User chooses one of 3 functionalities:
     - back to login menu 
 
 ### Creating new trip
+User is asked to input:
+- name of the trip
+- duration (in days)
+- location (optional)
+- picture (optional)
 
 ### Viewing a trip
+- list of expenses displayed
+- for each expense:
+    - name of expense
+    - cost
+    - cathegory
 
 ### Adding an expense
+User is asked to input:
+- name/description
+- cathegory (choose from: groceries, transportation, accommodation, restaurants, bars, cafes, shopping, activities, entertainment, currency exchange comissions, laundry, other)
+- amount (costs in EUR)
 
 ### Statistics of a trip
+- spent in total
+- spent per day (in average)
+- spent each day (display in a table)
+- spent per cathegory
+- cheapest and the most expensive item/expense
+- cheapest and the most expensive days 
+- cheapest and the most expensive cathegory
 
 ## Further development
 - users interact with each other, for example splitting the costs 
 - expense and trip deletion
 - user deletion
+- currency exchange calculator
