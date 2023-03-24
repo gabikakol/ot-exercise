@@ -1,9 +1,9 @@
 # Specification
 
 ## Purpose
-track spendings while traveling;
-check spendings from the past trips;
-check stats of the trip (both while still traveling and for the past travels)
+The purpose of the app is to track the spendings while traveling, divide them into cathegories, and see the statistics (total, per day, per cathegory, the cheapest and the most expensive) of both current and past trips. 
+
+
 
 ## Users
 one user, has unique unsername and a non empty password. users do not interact with other users. each user has its own trips with stats. 
