@@ -20,4 +20,18 @@
       dice_sum(dice1_result, dice2_result)
       }
       
+      class Pawn {
+      pawn_location
+      dice_sum()
+      }
+      
+      class Tiles {
+      pawn_location
+      next_tile
+      }
+      
+      class Next_tile {
+      previous_tile
+      }
+      
 ```
