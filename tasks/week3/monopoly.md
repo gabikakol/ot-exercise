@@ -9,4 +9,15 @@
       Dice "2" --> "1" Pawn
       Pawn "1" --> "1" Tiles
       
+      class Player {
+      player_id
+      }
+      
+      class Dice {
+      player_id
+      dice1_result
+      dice2_result
+      dice_sum(dice1_result, dice2_result)
+      }
+      
 ```
