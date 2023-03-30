@@ -1,6 +1,10 @@
+from tkinter import Tk
+
 def main():
-    print("hello world")
-    #todo
+    window = Tk()
+    window.title("Todo application")
+
+    window.mainloop()
 
 if __name__ == "__main__":
     main()
