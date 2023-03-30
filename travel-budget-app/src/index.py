@@ -2,7 +2,7 @@ from tkinter import Tk
 
 def main():
     window = Tk()
-    window.title("Todo application")
+    window.title("Travel budget app")
 
     window.mainloop()
 
