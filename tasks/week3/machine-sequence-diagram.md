@@ -1,6 +1,3 @@
-
-
-## example
 ```mermaid
 sequenceDiagram
 
