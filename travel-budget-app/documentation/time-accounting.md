@@ -3,3 +3,5 @@
 |:------| :---------- |:----------|:----------------------|
 |2      | 22.03.2023  | 3         |idea for the project, planning |
 |2      | 24.03.2023  | 2         |specification document |
+|3      | 30.03.2023  | 3         |initializing the project: poetry, tests, invoke etc |
+|3      | 31.03.2023  | 2         |struggling with installing tkinter |
