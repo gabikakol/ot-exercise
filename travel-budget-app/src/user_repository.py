@@ -1,4 +1,5 @@
 from database_connection import get_database_connection
+from entities.user import User
 
 class UserRepository:
 
@@ -10,7 +11,7 @@ class UserRepository:
         cursor.execute("select * from users")
         rows = cursor.fetchall()
         
-        return [([row["username"], row["password"]] for row in rows)]
+        return [User((row["username"], row["password"]) for row in rows)]
     
 user_repository = UserRepository(get_database_connection())
 users = user_repository.find_all()

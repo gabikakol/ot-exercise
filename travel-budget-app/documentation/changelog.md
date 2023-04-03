@@ -1,3 +1,0 @@
-# Changes
-## Week 3
-??
