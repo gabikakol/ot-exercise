@@ -1,13 +1,8 @@
-#from tkinter import Tk
-
+import tkinter
 
 def main():
-#    window = Tk()
-#    window.title("Todo application")
-
-#    window.mainloop()
-
-    print('hello world')
+    window = tkinter.Tk()
+    window.mainloop()
 
 if __name__ == "__main__":
     main()
