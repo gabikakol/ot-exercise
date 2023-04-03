@@ -1,7 +1,13 @@
-import tkinter
+from tkinter import Tk
+from ui.ui import UI
 
 def main():
-    window = tkinter.Tk()
+    window = Tk()
+    window.title("Travel budget app")
+
+    ui = UI(window)
+    ui.start()
+    
     window.mainloop()
 
 if __name__ == "__main__":
