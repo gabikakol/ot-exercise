@@ -11,8 +11,6 @@ def main():
     
     window.mainloop()
 
-
-
 from initialize_database import initialize_database
 
 def draft():
