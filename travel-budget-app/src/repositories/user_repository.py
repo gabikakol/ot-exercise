@@ -6,11 +6,10 @@ def get_user_by_row(row):
 
 class UserRepository:
     def __init__(self, connection):
-        self._connection = connection
+        self.connection = connection
 
     def create_user(self, user):
         cursor = self.connection.cursor()
-
         cursor.execute(
             "insert into users (username, password) values (?, ?);",
             (user.username, user.password)
@@ -23,7 +22,6 @@ class UserRepository:
     def find_user(self, username):
 
         cursor = self.connection.cursor()
-
         cursor.execute(
             "select * from users where username = ?;",
             (username,)
@@ -36,11 +34,11 @@ class UserRepository:
     def find_all_users(self):
 
         cursor = self.connection.cursor()
-
         rows = cursor.execute(
                 "select * from users;"
             ).fetchall()
 
         return [User(row["username"], row["password"]) for row in rows]
+    
 
 user_repository = UserRepository(get_database_connection())
