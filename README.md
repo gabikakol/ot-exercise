@@ -1,3 +1,5 @@
+Software development course (Ohjelmistotekniikka), spring 2023, University of Helsinki
+
 # Travel budget app
 ## Documentation
 - [specification](travel-budget-app/documentation/specification.md)
