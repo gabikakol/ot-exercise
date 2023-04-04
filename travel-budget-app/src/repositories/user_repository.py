@@ -15,7 +15,10 @@ class UserRepository:
         cursor = self.connection.cursor()
         cursor.execute("select * from users where username = ?;", (username,))
         row = cursor.fetchone()
-        return User(row["username"], row["password"]) if row else None
+        if row:
+            return User(row["username"], row["password"]) 
+        else:
+            return None
     
     def find_all_users(self):
         cursor = self.connection.cursor()
