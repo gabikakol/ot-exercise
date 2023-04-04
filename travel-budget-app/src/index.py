@@ -6,9 +6,7 @@ def main():
     window.title("Travel budget app")
     window.geometry("540x400")
 
-    ui = UI(window)
-    ui.login_start()
-    
+    ui = UI(window)    
     window.mainloop()
 
 from init_database import init_database
@@ -18,5 +16,5 @@ def draft():
     print("initialize_database works")
 
 if __name__ == "__main__":
-    #main()
-    draft()
+    main()
+    #draft()
