@@ -11,10 +11,10 @@ def main():
     
     window.mainloop()
 
-from initialize_database import initialize_database
+from init_database import init_database
 
 def draft():
-    initialize_database()
+    init_database()
     print("initialize_database works")
 
 if __name__ == "__main__":

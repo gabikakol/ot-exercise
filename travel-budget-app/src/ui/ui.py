@@ -1,10 +1,10 @@
 from tkinter import ttk
-from ui.create_user import CreateUser
 
 class UI:
     def __init__(self, root):
         self._root = root
         self.login_start()
+        #self.create_user_start()
 
     def login_start(self):
         heading_label = ttk.Label(master=self._root, text="Login")
@@ -29,6 +29,6 @@ class UI:
         button_login.grid(row=3, column=0, columnspan=2)
         button_create_user.grid(row=4, column=0, columnspan=2)
 
-
-
-    
+    def create_user_start(self):
+        pass
+        
