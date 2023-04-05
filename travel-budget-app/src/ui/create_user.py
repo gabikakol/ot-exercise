@@ -1,4 +1,5 @@
 from tkinter import ttk
+from services.user_service import user_service
 
 class CreateUser:
     def __init__(self, root, login_view):
@@ -38,7 +39,17 @@ class CreateUser:
         login_menu_button.grid(padx=5, pady=5)
 
     def handle_create_user(self):
-        print("create user will be handled")
+        username = self._username_entry.get()
+        password1 = self._password_entry1.get()
+        password2 = self._password_entry2.get()
+        password_final = None
+        if password1 == password2:
+            password_final = password1
+        else:
+            print('error passwords dont match')
+        if password_final:
+            user_service.new_user(username, password_final)
+
 
     def destroy(self):
         self.window.destroy()
