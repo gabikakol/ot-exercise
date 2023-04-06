@@ -1,6 +1,7 @@
 from tkinter import ttk
 from services.user_service import user_service
 
+
 class Login:
     def __init__(self, root, create_user_view):
         self._root = root
@@ -9,7 +10,7 @@ class Login:
         self._password_entry = None
         self.widnow = None
         self.start()
-    
+
     def start(self):
         self.window = ttk.Frame(master=self._root)
 
@@ -26,22 +27,21 @@ class Login:
         self._password_entry = ttk.Entry(master=self.window)
         self._password_entry.grid(padx=5, pady=5)
 
-        login_button = ttk.Button(master=self.window,text="Login",command=self.handle_login)
+        login_button = ttk.Button(
+            master=self.window, text="Login", command=self.handle_login)
         login_button.grid(padx=5, pady=5)
-        
-        create_user_button = ttk.Button(master=self.window,text="Create user",command=self.create_user_view)        
-        create_user_button.grid(padx=5, pady=5)
 
+        create_user_button = ttk.Button(
+            master=self.window, text="Create user", command=self.create_user_view)
+        create_user_button.grid(padx=5, pady=5)
 
     def handle_login(self):
         username = self._username_entry.get()
         password = self._password_entry.get()
         user_service.login(username, password)
 
-
     def destroy(self):
         self.window.destroy()
 
     def pack(self):
         self.window.pack()
-
