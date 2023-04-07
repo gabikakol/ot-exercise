@@ -3,8 +3,9 @@ from services.user_service import user_service
 
 
 class Login:
-    def __init__(self, root, create_user_view):
+    def __init__(self, root, trips_view, create_user_view):
         self._root = root
+        self.trips_view = trips_view
         self.create_user_view = create_user_view
         self._username_entry = None
         self._password_entry = None
@@ -39,6 +40,7 @@ class Login:
         username = self._username_entry.get()
         password = self._password_entry.get()
         user_service.login(username, password)
+        self.trips_view()
 
     def destroy(self):
         self.window.destroy()

@@ -3,8 +3,9 @@ from services.user_service import user_service
 
 
 class CreateUser:
-    def __init__(self, root, login_view):
+    def __init__(self, root, trips_view, login_view):
         self._root = root
+        self.trips_view = trips_view
         self.login_view = login_view
         self.window = None
         self._username_entry = None
@@ -35,7 +36,7 @@ class CreateUser:
         self._password_entry2.grid(padx=5, pady=5)
 
         save_button = ttk.Button(
-            master=self.window, text="Save", command=self.handle_create_user)
+            master=self.window, text="Save and log in", command=self.handle_create_user)
         save_button.grid(padx=5, pady=5)
 
         login_menu_button = ttk.Button(
@@ -53,6 +54,7 @@ class CreateUser:
             print('error passwords dont match')
         if password_final:
             user_service.new_user(username, password_final)
+            self.trips_view()
 
     def destroy(self):
         self.window.destroy()

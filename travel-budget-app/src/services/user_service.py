@@ -1,10 +1,13 @@
 from entities.user import User
-from repositories.user_repository import user_repository as x
+from entities.trip import Trip
+from repositories.user_repository import user_repository
+from repositories.trip_repository import trip_repository
 
 
 class UserService:
-    def __init__(self, user_rep=x):
+    def __init__(self, user_rep=user_repository, trip_rep=trip_repository):
         self.user_rep = user_rep
+        self.trip_rep = trip_rep
         self.user = None
 
     def new_user(self, username, password):
@@ -28,10 +31,15 @@ class UserService:
         else:
             self.user = user
             print('login successfull')
+            #case sensitive or not?
             return user
 
     def logout(self):
         self.user = None
+
+    def create_trip(self, trip):
+        trip = Trip(trip=trip, user=self.user)
+        return self.trip_rep.create_trip(trip)
 
 
 user_service = UserService()

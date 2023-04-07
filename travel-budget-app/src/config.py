@@ -10,3 +10,6 @@ except FileNotFoundError:
 
 DATABASE_FILENAME = os.getenv("DATABASE_FILENAME") or "database.sqlite"
 DATABASE_FILEPATH = os.path.join(dir_name, "..", "data", DATABASE_FILENAME)
+
+TRIPS_FILENAME = os.getenv("TRIPS_FILENAME") or "trips.scv"
+TRIPS_FILEPATH = os.path.join(dir_name, "..", "data", DATABASE_FILENAME)
