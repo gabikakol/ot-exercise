@@ -42,5 +42,8 @@ class TripRepository:
         trips.append(trip)
         self.write(trips)
         return trip
+    
+    def delete(self):
+        self.write([])
 
 trip_repository = TripRepository(TRIPS_FILEPATH)
