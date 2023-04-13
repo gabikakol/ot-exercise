@@ -1,6 +1,6 @@
 from pathlib import Path
 from entities.trip import Trip
-from repositories.user_repository import user_repository
+#from repositories.user_repository import user_repository
 from config import TRIPS_FILEPATH
 
 class TripRepository:

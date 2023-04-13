@@ -14,10 +14,11 @@ class UserService:
         exists = self.user_rep.find_user(username)
         if exists:
             print('error username is not unique')
+            return None
         else:
             user = self.user_rep.create_user(User(username, password))
             print('user created successfully')
-            return user
+            self.login(username, password)
 
     def login(self, username, password):
         user = self.user_rep.find_user(username)
@@ -42,6 +43,9 @@ class UserService:
     def create_trip(self, trip):
         trip = Trip(trip=trip, user=self.user)
         return self.trip_rep.create_trip(trip)
+    
+    def get_username(self):
+        return self.user.username
 
 
 user_service = UserService()
