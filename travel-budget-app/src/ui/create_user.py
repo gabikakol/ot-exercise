@@ -3,9 +3,9 @@ from services.user_service import user_service
 
 
 class CreateUser:
-    def __init__(self, root, trips_view, login_view):
+    def __init__(self, root, user_menu, login_view):
         self._root = root
-        self.trips_view = trips_view
+        self.user_menu = user_menu
         self.login_view = login_view
         self.window = None
         self._username_entry = None
@@ -54,7 +54,7 @@ class CreateUser:
             print('error passwords dont match')
         if password_final:
             user_service.new_user(username, password_final)
-            self.trips_view()
+            self.user_menu()
 
     def destroy(self):
         self.window.destroy()

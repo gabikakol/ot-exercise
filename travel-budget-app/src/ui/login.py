@@ -3,10 +3,10 @@ from services.user_service import user_service
 
 
 class Login:
-    def __init__(self, root, trips_view, create_user_view):
+    def __init__(self, root, user_menu, create_user_view):
         self._root = root
-        self.trips_view = trips_view
-        self.create_user_view = create_user_view
+        self.user_menu = user_menu
+        self.create_user = create_user_view
         self._username_entry = None
         self._password_entry = None
         self.widnow = None
@@ -33,7 +33,7 @@ class Login:
         login_button.grid(padx=5, pady=5)
 
         create_user_button = ttk.Button(
-            master=self.window, text="Create user", command=self.create_user_view)
+            master=self.window, text="Create user", command=self.create_user)
         create_user_button.grid(padx=5, pady=5)
 
     def handle_login(self):
@@ -41,7 +41,7 @@ class Login:
         password = self._password_entry.get()
         x = user_service.login(username, password)
         if x:
-            self.trips_view()
+            self.user_menu()
 
     def destroy(self):
         self.window.destroy()
