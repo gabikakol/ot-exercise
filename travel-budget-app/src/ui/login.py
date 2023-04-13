@@ -39,8 +39,9 @@ class Login:
     def handle_login(self):
         username = self._username_entry.get()
         password = self._password_entry.get()
-        user_service.login(username, password)
-        self.trips_view()
+        x = user_service.login(username, password)
+        if x:
+            self.trips_view()
 
     def destroy(self):
         self.window.destroy()

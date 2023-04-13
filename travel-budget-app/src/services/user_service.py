@@ -24,9 +24,11 @@ class UserService:
 
         if not user:
             print('error user doesnt exist')
+            return None
 
         elif password != user.password:
             print('error incorrect password')
+            return None
 
         else:
             self.user = user
