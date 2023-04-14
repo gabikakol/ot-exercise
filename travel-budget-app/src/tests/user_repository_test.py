@@ -14,13 +14,13 @@ class TestUserRepository(unittest.TestCase):
         users_list = user_repository.find_all_users()
         self.assertEqual(users_list[-1].username, self.user1.username)
         user_repository.delete()
-   
+
     def test_find_user(self):
         user_repository.create_user(self.user2)
         user_found = user_repository.find_user(self.user2.username)
         self.assertEqual(user_found.username, self.user2.username)
         user_repository.delete()
-        
+
     def test_find_all_users(self):
         user_repository.create_user(self.user1)
         user_repository.create_user(self.user2)

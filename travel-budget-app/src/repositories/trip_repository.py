@@ -1,12 +1,14 @@
-#from pathlib import Path
-#from entities.trip import Trip
-#from repositories.user_repository import user_repository
+# from pathlib import Path
+# from entities.trip import Trip
+# from repositories.user_repository import user_repository
 from config import TRIPS_FILEPATH
+
 
 class TripRepository:
 
     def __init__(self, filepath):
         self.filepath = filepath
+
 
 """
     def read(self):
@@ -47,5 +49,5 @@ class TripRepository:
     def delete(self):
         self.write([])
 """
-        
+
 trip_repository = TripRepository(TRIPS_FILEPATH)

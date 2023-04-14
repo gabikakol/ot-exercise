@@ -29,7 +29,8 @@ class UI:
 
     def user_menu(self):
         self.hide_current_window()
-        self.window = UserMenu(self._root, self.login_view, self.trips_list, self.new_trip)
+        self.window = UserMenu(self._root, self.login_view,
+                               self.trips_list, self.new_trip)
         self.window.pack()
 
     def trips_list(self):

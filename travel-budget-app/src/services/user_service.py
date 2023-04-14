@@ -30,7 +30,7 @@ class UserService:
             return None
         self.user = user
         print('login successfull')
-        #case sensitive or not?
+        # case sensitive or not?
         return user
 
     def logout(self):
@@ -39,7 +39,7 @@ class UserService:
     def create_trip(self, trip):
         trip = Trip(trip=trip, user=self.user)
         return self.trip_rep.create_trip(trip)
-    
+
     def get_username(self):
         return self.user.username
 
