@@ -15,10 +15,9 @@ class UserService:
         if exists:
             print('error username is not unique')
             return None
-        else:
-            user = self.user_rep.create_user(User(username, password))
-            print('user created successfully')
-            self.login(username, password)
+        self.user_rep.create_user(User(username, password))
+        print('user created successfully')
+        self.login(username, password)
 
     def login(self, username, password):
         user = self.user_rep.find_user(username)
@@ -26,16 +25,13 @@ class UserService:
         if not user:
             print('error user doesnt exist')
             return None
-
-        elif password != user.password:
+        if password != user.password:
             print('error incorrect password')
             return None
-
-        else:
-            self.user = user
-            print('login successfull')
-            #case sensitive or not?
-            return user
+        self.user = user
+        print('login successfull')
+        #case sensitive or not?
+        return user
 
     def logout(self):
         self.user = None
