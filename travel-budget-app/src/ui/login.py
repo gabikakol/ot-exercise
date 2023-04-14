@@ -15,7 +15,7 @@ class Login:
     def start(self):
         self.window = ttk.Frame(master=self._root)
 
-        heading_label = ttk.Label(master=self.window, text="Login:")
+        heading_label = ttk.Label(master=self.window, text="Login")
         heading_label.grid(padx=5, pady=5)
 
         username_label = ttk.Label(master=self.window, text="Username")

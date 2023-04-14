@@ -2,6 +2,7 @@ from ui.login import Login
 from ui.create_user import CreateUser
 from ui.user_menu import UserMenu
 from ui.trips_list import TripsList
+from ui.new_trip import NewTrip
 
 
 class UI:
@@ -28,10 +29,15 @@ class UI:
 
     def user_menu(self):
         self.hide_current_window()
-        self.window = UserMenu(self._root, self.login_view, self.trips_list)
+        self.window = UserMenu(self._root, self.login_view, self.trips_list, self.new_trip)
         self.window.pack()
 
     def trips_list(self):
         self.hide_current_window()
-        self.window = TripsList(self._root, self.user_menu)
+        self.window = TripsList(self._root, self.user_menu, self.new_trip)
+        self.window.pack()
+
+    def new_trip(self):
+        self.hide_current_window()
+        self.window = NewTrip(self._root, self.trips_list)
         self.window.pack()
