@@ -1,4 +1,5 @@
-Software development course (Ohjelmistotekniikka), spring 2023, University of Helsinki
+Software development course (Ohjelmistotekniikka), spring 2023, University of Helsinki <br/>
+https://ohjelmistotekniikka-hy.github.io/
 
 # Travel budget app
 ## Documentation
