@@ -1,6 +1,5 @@
 import uuid
 
-
 class Trip:
 
     def __init__(self, trip, user=None, trip_id=None):

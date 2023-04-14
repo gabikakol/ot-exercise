@@ -1,13 +1,13 @@
 from entities.user import User
 from entities.trip import Trip
 from repositories.user_repository import user_repository
-from repositories.trip_repository import trip_repository
+#from repositories.trip_repository import trip_repository
 
 
 class UserService:
-    def __init__(self, user_rep=user_repository, trip_rep=trip_repository):
+    def __init__(self, user_rep=user_repository):
         self.user_rep = user_rep
-        self.trip_rep = trip_rep
+        #self.trip_rep = trip_rep
         self.user = None
 
     def new_user(self, username, password):
@@ -36,9 +36,11 @@ class UserService:
     def logout(self):
         self.user = None
 
+    """
     def create_trip(self, trip):
         trip = Trip(trip=trip, user=self.user)
         return self.trip_rep.create_trip(trip)
+    """
 
     def get_username(self):
         return self.user.username
