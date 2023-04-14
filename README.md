@@ -4,6 +4,6 @@ https://ohjelmistotekniikka-hy.github.io/
 # Travel budget app
 ## Documentation
 - [specification](travel-budget-app/documentation/specification.md)
-- [architecture](travel-budget-app/architecture/specification.md)
+- [architecture](travel-budget-app/documentation/architecture.md)
 - [changelog](travel-budget-app/documentation/changelog.md)
 - [time accounting](travel-budget-app/documentation/time-accounting.md)
