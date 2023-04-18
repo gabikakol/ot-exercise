@@ -10,7 +10,7 @@
 - creating user and login in, database connected to UI (if user doesn't exist, login not allowed)
 - main menu view with options: ```my trips```, ```create new trip```, ```log out```
 - ```my trips``` view:
-    - header "hello *username*!
+    - header "hello *username*!"
     - ```create new trip``` button
     - ```back to menu``` button
 - ```create new trip``` view:
