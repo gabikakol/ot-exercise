@@ -1,13 +1,13 @@
 from entities.user import User
-from entities.trip import Trip
+# from entities.trip import Trip
 from repositories.user_repository import user_repository
-#from repositories.trip_repository import trip_repository
+# from repositories.trip_repository import trip_repository
 
 
 class UserService:
     def __init__(self, user_rep=user_repository):
         self.user_rep = user_rep
-        #self.trip_rep = trip_rep
+        # self.trip_rep = trip_rep
         self.user = None
 
     def new_user(self, username, password):
@@ -15,6 +15,7 @@ class UserService:
         if exists:
             print('error username is not unique')
             return None
+            # change this
         self.user_rep.create_user(User(username, password))
         print('user created successfully')
         self.login(username, password)

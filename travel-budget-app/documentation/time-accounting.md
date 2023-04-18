@@ -8,6 +8,7 @@
 |3      | 03.04.2023  | 4         |UI login view, database for users (username and password)|
 |3      | 04.04.2023  | 4         |testing, UI create user view|
 |4      | 07.04.2023  | 2         |taking care of small errors|
-|4      | 08.04.2023  | 2         |pylint, expanding to main menu view (after login)|
+|4      | 08.04.2023  | 2         |expanding to main menu view (after login)|
 |4      | 13.04.2023  | 2         |my trips view created|
 |4      | 14.04.2023  | 3         |create new trip view created|
+|4      | 18.04.2023  | 2         |documentation, autopep8 and pylint|

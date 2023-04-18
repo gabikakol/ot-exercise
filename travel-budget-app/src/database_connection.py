@@ -7,8 +7,10 @@ connection_database.row_factory = sqlite3.Row
 connection_trips = sqlite3.connect(TRIPS_FILEPATH)
 connection_trips.row_factory = sqlite3.Row
 
+
 def get_database_connection():
     return connection_database
+
 
 def get_trips_connection():
     return connection_trips
