@@ -10,3 +10,6 @@ User interface contains the following views:
 - user menu
 - trips list
 - new trip
+
+## Application logic
+coming soon :)
