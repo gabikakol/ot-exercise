@@ -5,6 +5,7 @@ from repositories.trip_repository import trip_repository
 class TripService:
     def __init__(self, trip_rep=trip_repository):
         self.trip_rep = trip_rep
+        self.trip = None
         """
         self.username = None
         self.trip_name = None
@@ -19,6 +20,9 @@ class TripService:
             print("trip added successfully")
         else:
             print("new trip error")
+
+    def get_trip_name(self):
+        return None
 
 
 trip_service = TripService()

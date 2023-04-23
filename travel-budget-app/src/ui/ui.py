@@ -3,7 +3,7 @@ from ui.create_user import CreateUser
 from ui.user_menu import UserMenu
 from ui.trips_list import TripsList
 from ui.new_trip import NewTrip
-
+from ui.trip_view import TripView
 
 class UI:
     def __init__(self, root):
@@ -35,10 +35,15 @@ class UI:
 
     def trips_list(self):
         self.hide_current_window()
-        self.window = TripsList(self._root, self.user_menu, self.new_trip)
+        self.window = TripsList(self._root, self.user_menu, self.new_trip, self.trip_view)
         self.window.pack()
 
     def new_trip(self):
         self.hide_current_window()
         self.window = NewTrip(self._root, self.trips_list)
+        self.window.pack()
+
+    def trip_view(self):
+        self.hide_current_window()
+        self.window = TripView(self._root, self.trips_list)
         self.window.pack()
