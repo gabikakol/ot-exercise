@@ -19,6 +19,12 @@ class TripsList:
             master=self._window, text=f"{self.username}'s trips:")
         header_label.grid(padx=5, pady=5)
 
+        trips = trip_repository.find_all_trips()
+        for trip in trips:
+            if trip.username == self.username:
+                label = ttk.Label(master=self._window, text=trip.trip_name)
+                label.grid(padx=5, pady=5)
+
         new_trip_button = ttk.Button(
             master=self._window, text="Create new trip", command=self.new_trip_handle)
         new_trip_button.grid(padx=5, pady=5)
@@ -34,3 +40,5 @@ class TripsList:
 
     def destroy(self):
         self._window.destroy()
+
+        

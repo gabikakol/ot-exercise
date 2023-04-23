@@ -2,6 +2,7 @@ from tkinter import ttk, StringVar
 from services.trip_service import trip_service
 from services.user_service import user_service
 
+
 class NewTrip:
     def __init__(self, root, trips_list):
         self._root = root
@@ -54,5 +55,5 @@ class NewTrip:
         trip_name = self.name_entry.get()
         duration = self.duration_entry.get()
         category = self.tkvar.get()
-        trip_service.new_trip(username, trip_name, duration, category)
+        trip_service.new_trip(trip_name, username, duration, category)
         self.trips_list_handle()
