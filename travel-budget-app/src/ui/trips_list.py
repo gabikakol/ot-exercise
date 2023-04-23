@@ -1,5 +1,6 @@
 from tkinter import ttk
 from services.user_service import user_service
+from repositories.trip_repository import trip_repository
 
 
 class TripsList:
