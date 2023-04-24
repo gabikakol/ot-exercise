@@ -2,20 +2,20 @@ from tkinter import ttk
 from services.trip_service import trip_service
 
 class TripView:
-    def __init__(self, root, trips_list):
+    def __init__(self, root, trips_list, add_expense):
         self._root = root
         self.trips_list_handle = trips_list
         self._window = None
-        self.trip_name = trip_service.get_trip_name()
+        self.add_expense = add_expense
         self.start()
 
 
     def start(self):
         self._window = ttk.Frame(master=self._root)
-        header_label = ttk.Label(master=self._window, text=f"Expenses of the trip: {self.trip_name}")
+        header_label = ttk.Label(master=self._window, text=f"Expenses of the X trip")
         header_label.grid(padx=5, pady=5)
 
-        add_button = ttk.Button(master=self._window, text="Add expense")
+        add_button = ttk.Button(master=self._window, text="Add expense", command = self.add_expense)
         add_button.grid(padx=5,pady=5)
 
         stats_button = ttk.Button(master=self._window, text="Statistics")

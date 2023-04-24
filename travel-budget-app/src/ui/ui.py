@@ -4,6 +4,7 @@ from ui.user_menu import UserMenu
 from ui.trips_list import TripsList
 from ui.new_trip import NewTrip
 from ui.trip_view import TripView
+from ui.add_expense import AddExpense
 
 class UI:
     def __init__(self, root):
@@ -45,5 +46,10 @@ class UI:
 
     def trip_view(self):
         self.hide_current_window()
-        self.window = TripView(self._root, self.trips_list)
+        self.window = TripView(self._root, self.trips_list, self.add_expense)
+        self.window.pack()
+
+    def add_expense(self):
+        self.hide_current_window()
+        self.window = AddExpense(self._root, self.trip_view)
         self.window.pack()

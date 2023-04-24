@@ -21,8 +21,7 @@ class TripService:
         else:
             print("new trip error")
 
-    def get_trip_name(self):
-        return None
+
 
 
 trip_service = TripService()
