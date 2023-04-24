@@ -28,16 +28,6 @@ class NewTrip:
         self.duration_entry = ttk.Entry(master=self._window)
         self.duration_entry.grid(padx=5, pady=5)
 
-        category_label = ttk.Label(master=self._window, text="Category")
-        category_label.grid(padx=5, pady=5)
-
-        categories = ['select an option', 'groceries', 'restaurants', 'cafes', 'bars', 'laundry',
-                      'transportation', 'accommodation', 'tickets', 'currency exchange commissions', 'activities', 'other']
-        self.tkvar = StringVar(self._root)
-        # tkvar.set('Select an option')
-        category_menu = ttk.OptionMenu(self._window, self.tkvar, *categories)
-        category_menu.grid(padx=5, pady=5)
-
         save_button = ttk.Button(
             master=self._window, text="Save", command=self.handle_new_trip)
         save_button.grid(padx=5, pady=5)
@@ -54,6 +44,5 @@ class NewTrip:
         username = user_service.get_username()
         trip_name = self.name_entry.get()
         duration = self.duration_entry.get()
-        category = self.tkvar.get()
-        trip_service.new_trip(trip_name, username, duration, category)
+        trip_service.new_trip(trip_name, username, duration)
         self.trips_list_handle()

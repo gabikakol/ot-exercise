@@ -13,10 +13,10 @@ class TripService:
         self.category = None
         """
 
-    def new_trip(self, username, trip_name, duration, category):
-        if trip_name and duration and category != "select an option":
+    def new_trip(self, username, trip_name, duration):
+        if trip_name and duration:
             self.trip_rep.create_trip(
-                Trip(username, trip_name, duration, category))
+                Trip(None, username, trip_name, duration))
             print("trip added successfully")
         else:
             print("new trip error")

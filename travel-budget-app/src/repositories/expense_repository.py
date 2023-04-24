@@ -7,7 +7,7 @@ class ExpenseRepository:
 
     def create_expense(self, expense):
         cursor = self.connection.cursor()
-        cursor.execute("insert into expenses (expense_id, expense_name, trip_id, amount, category) values (?,?,?,?,?);", (expense.expense_id, expense.description, expense.trip_id, expense.amount, expense.category))
+        cursor.execute("insert into expenses (expense_id, expense_description, trip_id, amount, category) values (?,?,?,?,?);", (expense.expense_id, expense.description, expense.trip_id, expense.amount, expense.category))
         self.connection.commit()
 
 expense_repository = ExpenseRepository(get_database_connection())
