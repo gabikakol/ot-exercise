@@ -7,9 +7,14 @@
 User interface contains the following views:
 - login 
 - create user
-- user menu
+- main menu
 - trips list
-- new trip
+- create a new trip
+- trip view and expenses list
+- add an expense
+- trip's statistics
+- user's statistics
+
 
 ## Application logic
 coming soon :)
