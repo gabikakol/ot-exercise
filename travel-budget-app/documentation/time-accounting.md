@@ -12,3 +12,6 @@
 |4      | 13.04.2023  | 2         |my trips view created|
 |4      | 14.04.2023  | 3         |create new trip view created|
 |4      | 18.04.2023  | 2         |documentation, autopep8 and pylint|
+|5      | 20.04.2023  | 2         |databases for trips and expenses created, connected to UI|
+|5      | 23.04.2023  | 3         |UI improvements|
+|5      | 25.04.2023  | 6         |databases improvements, UI: user and trip statistics, add expense|
