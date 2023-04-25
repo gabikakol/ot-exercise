@@ -11,7 +11,7 @@ The program is used by one user at the time. Each user has an unique username an
 
 ## Functionality
 
-### Before login
+### Before login *(all done)*
 - New user:
     - creates an unique username
     - created a valid password
@@ -19,43 +19,52 @@ The program is used by one user at the time. Each user has an unique username an
     - logs in using the previosuly created username and the corresponding password
     - system informs if the username is not found or the password is incorrect
 
-### After login
-User chooses one of 3 functionalities:
+### After login *(all done)*
+User chooses one of 4 functionalities:
 1. My trips
-    - redirects to the "My trips" menu 
-3. Add new trip
-    - redirects to the "New trip" window
-5. Sign out
-    - back to login menu 
+    - redirects to the "My trips" window 
+3. Create new trip
+    - redirects to the "Create new trip" window
+4. User statistics
+    - reditects to the "User statistics" window
+5. Log out
+    - redirects back to login menu 
 
-### Creating new trip
+### Creating new trip *(all done)*
 User is asked to input:
 - name of the trip
 - duration (in days)
-- location (optional)
-- picture (optional)
 
-### Viewing a trip
+### Viewing a trip *(all done)*
 - list of expenses displayed
 - for each expense:
     - name of expense
     - cost
-    - cathegory
+    - category
 
-### Adding an expense
+### Adding an expense *(all done)*
 User is asked to input:
-- name/description
-- cathegory (choose from: groceries, transportation, accommodation, restaurants, bars, cafes, shopping, activities, entertainment, currency exchange comissions, laundry, other)
+- description
 - amount (costs in EUR)
+- cathegory (choose from: groceries, transportation, accommodation, restaurants, bars, cafes, shopping, activities, entertainment, currency exchange comissions, laundry, other)
 
-### Statistics of a trip
+### Trip statistics
+- spent in total *(done)*
+- duration of the trip *(done)*
+- spent per day (on average) *(done)*
+- spent each day (displayed in a table)
+- spent per category (displayed in a table)
+- the cheapest and the most expensive item/expense
+- the cheapest and the most expensive category
+
+### User statistics
+- total number of trips
+- total number of travel days
 - spent in total
-- spent per day (in average)
-- spent each day (display in a table)
-- spent per cathegory
-- cheapest and the most expensive item/expense
-- cheapest and the most expensive days 
-- cheapest and the most expensive cathegory
+- spent per trip on average
+- spent per day on average
+- the cheapest and the most expensive category 
+- the cheapest and the most expensive item/expense
 
 ## Further development
 - users interact with each other, for example splitting the costs 
