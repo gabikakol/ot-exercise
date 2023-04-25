@@ -6,7 +6,7 @@
 - sqlite database for username and password created
 - adding and finding user (username and password) in database tested
 
-## week 4
+## Week 4
 - creating user and login in, database connected to UI (if user doesn't exist, login not allowed)
 - main menu view with options: ```My trips```, ```Create new trip```, ```Log out```
 - ```My trips``` view:
@@ -19,7 +19,7 @@
     - duration of the trip in days 
     - ```Save``` option
 
-## week 5
+## Week 5
 - database for trips created and connected to UI
 - database for expenses created and connected to UI
 - user's main menu:
