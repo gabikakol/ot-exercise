@@ -1,5 +1,6 @@
 import uuid
 
+
 class Expense:
     def __init__(self, expense_id, description, trip_id, amount, category):
         self.expense_id = expense_id or str(uuid.uuid4())

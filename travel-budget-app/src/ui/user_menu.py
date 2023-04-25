@@ -30,8 +30,9 @@ class UserMenu:
             master=self._window, text="Create new trip", command=self.new_trip_handle)
         new_trip_button.grid(padx=5, pady=5)
 
-        stats_button = ttk.Button(master=self._window, text="User statistics", command=self.user_stats_handle)
-        stats_button.grid(padx=5,pady=5)
+        stats_button = ttk.Button(
+            master=self._window, text="User statistics", command=self.user_stats_handle)
+        stats_button.grid(padx=5, pady=5)
 
         logout_button = ttk.Button(
             master=self._window, text="Log out", command=self.logout_handle)

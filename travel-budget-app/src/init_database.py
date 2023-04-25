@@ -12,10 +12,12 @@ def drop_trips_tables(connection):
     cursor.execute("""drop table if exists trips;""")
     connection.commit()
 
+
 def drop_expenses_tables(connection):
     cursor = connection.cursor()
     cursor.execute("""drop table if exists expenses;""")
     connection.commit()
+
 
 def create_user_tables(connection):
     cursor = connection.cursor()
@@ -31,12 +33,14 @@ def create_trips_tables(connection):
     # add later: duration text, category text
     connection.commit()
 
+
 def create_expenses_tables(connection):
     cursor = connection.cursor()
     cursor.execute(
         """create table expenses (expense_id text primary key,expense_description text, trip_id text, amount text, category text);""")
     # add later: duration text, category text
     connection.commit()
+
 
 def init_users_database():
     connection = get_database_connection()
@@ -49,10 +53,12 @@ def init_trips_database():
     drop_trips_tables(connection)
     create_trips_tables(connection)
 
+
 def init_expenses_database():
     connection = get_database_connection()
     drop_expenses_tables(connection)
     create_expenses_tables(connection)
+
 
 """
 if __name__ == "__main__":

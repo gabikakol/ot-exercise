@@ -22,14 +22,13 @@ class TripService:
         else:
             print("new trip error")
 
-
     def trip_login(self, id, name):
         self.trip_id = id
         self.trip_name = name
 
     def get_trip_id(self):
         return self.trip_id
-    
+
     def get_trip_name(self):
         return self.trip_name
 

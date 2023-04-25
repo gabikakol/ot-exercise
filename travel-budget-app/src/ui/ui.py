@@ -8,6 +8,7 @@ from ui.add_expense import AddExpense
 from ui.trip_statistics import TripStats
 from ui.user_statistics import UserStats
 
+
 class UI:
     def __init__(self, root):
         self._root = root
@@ -38,7 +39,8 @@ class UI:
 
     def trips_list(self):
         self.hide_current_window()
-        self.window = TripsList(self._root, self.user_menu, self.new_trip, self.trip_view)
+        self.window = TripsList(
+            self._root, self.user_menu, self.new_trip, self.trip_view)
         self.window.pack()
 
     def new_trip(self):
@@ -48,7 +50,8 @@ class UI:
 
     def trip_view(self):
         self.hide_current_window()
-        self.window = TripView(self._root, self.trips_list, self.add_expense, self.trip_stats)
+        self.window = TripView(self._root, self.trips_list,
+                               self.add_expense, self.trip_stats)
         self.window.pack()
 
     def add_expense(self):

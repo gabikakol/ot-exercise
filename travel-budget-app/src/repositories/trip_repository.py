@@ -24,5 +24,6 @@ class TripRepository:
         if row:
             return Trip(row["trip_id"], row["trip_name"], row["username"], row["duration"])
         return None
-    
+
+
 trip_repository = TripRepository(get_database_connection())
