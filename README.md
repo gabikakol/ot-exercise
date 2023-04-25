@@ -33,8 +33,8 @@ Pylint analysis can be viewed with the command:
 ```
 poetry run invoke lints
 ```
-### Autopep8 formatting
-Code can be formatted with the command: 
+### Formatting
+Code can be formatted using autopep8 with the command: 
 ```
 poetry run invoke format
 ```
