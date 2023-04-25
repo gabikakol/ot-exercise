@@ -5,6 +5,8 @@ from ui.trips_list import TripsList
 from ui.new_trip import NewTrip
 from ui.trip_view import TripView
 from ui.add_expense import AddExpense
+from ui.trip_statistics import TripStats
+from ui.user_statistics import UserStats
 
 class UI:
     def __init__(self, root):
@@ -31,7 +33,7 @@ class UI:
     def user_menu(self):
         self.hide_current_window()
         self.window = UserMenu(self._root, self.login_view,
-                               self.trips_list, self.new_trip)
+                               self.trips_list, self.new_trip, self.user_stats)
         self.window.pack()
 
     def trips_list(self):
@@ -46,10 +48,20 @@ class UI:
 
     def trip_view(self):
         self.hide_current_window()
-        self.window = TripView(self._root, self.trips_list, self.add_expense)
+        self.window = TripView(self._root, self.trips_list, self.add_expense, self.trip_stats)
         self.window.pack()
 
     def add_expense(self):
         self.hide_current_window()
         self.window = AddExpense(self._root, self.trip_view)
+        self.window.pack()
+
+    def trip_stats(self):
+        self.hide_current_window()
+        self.window = TripStats(self._root, self.trip_view)
+        self.window.pack()
+
+    def user_stats(self):
+        self.hide_current_window()
+        self.window = UserStats(self._root, self.user_menu)
         self.window.pack()

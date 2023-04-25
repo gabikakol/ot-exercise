@@ -6,7 +6,7 @@ class AddExpense:
     def __init__(self, root, trip_view):
         self._root = root
         self._window = None
-        self.save_handle = trip_view
+        self.trip_view_handle = trip_view
         self.description_entry = None
         self.amount_entry = None
         self.cat_var = None
@@ -44,6 +44,10 @@ class AddExpense:
             master=self._window, text="Save", command=self.handle_add_expense)
         save_button.grid(padx=5, pady=5)
 
+        cancel_button = ttk.Button(
+            master=self._window, text="Cancel", command=self.trip_view_handle)
+        cancel_button.grid(padx=5, pady=5)
+
         self._window.grid_columnconfigure(0, weight=1, minsize=400)
 
         #description, amount, category
@@ -58,6 +62,6 @@ class AddExpense:
         description = self.description_entry.get()
         amount = self.amount_entry.get()
         category = self.cat_var.get()
-        trip_id = "X"
+        trip_id = trip_service.get_trip_id()
         expense_service.add_expense(description, trip_id, amount, category)
-        self.save_handle()
+        self.trip_view_handle()

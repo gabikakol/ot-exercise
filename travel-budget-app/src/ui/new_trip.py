@@ -32,6 +32,10 @@ class NewTrip:
             master=self._window, text="Save", command=self.handle_new_trip)
         save_button.grid(padx=5, pady=5)
 
+        cancel_button = ttk.Button(
+            master=self._window, text="Cancel", command=self.trips_list_handle)
+        cancel_button.grid(padx=5, pady=5)
+
         self._window.grid_columnconfigure(0, weight=1, minsize=400)
 
     def pack(self):

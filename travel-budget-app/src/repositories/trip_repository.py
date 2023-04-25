@@ -17,9 +17,9 @@ class TripRepository:
         rows = cursor.execute("select * from trips").fetchall()
         return [Trip(row["trip_id"], row["trip_name"], row["username"], row["duration"]) for row in rows]
 
-    def find_trip(self, trip_name):
+    def find_trip(self, trip_id):
         cursor = self.connection.cursor()
-        cursor.execute("select * from trips where trip_name = ?", (trip_name))
+        cursor.execute("select * from trips where trip_id = ?", (trip_id,))
         row = cursor.fetchone()
         if row:
             return Trip(row["trip_id"], row["trip_name"], row["username"], row["duration"])

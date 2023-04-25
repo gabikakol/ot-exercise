@@ -54,8 +54,9 @@ def init_expenses_database():
     drop_expenses_tables(connection)
     create_expenses_tables(connection)
 
-
+"""
 if __name__ == "__main__":
     init_users_database()
     init_trips_database()
     init_expenses_database()
+"""

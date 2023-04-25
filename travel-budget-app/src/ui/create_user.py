@@ -39,9 +39,9 @@ class CreateUser:
             master=self.window, text="Save and log in", command=self.handle_create_user)
         save_button.grid(padx=5, pady=5)
 
-        login_menu_button = ttk.Button(
-            master=self.window, text="Login menu", command=self.login_view)
-        login_menu_button.grid(padx=5, pady=5)
+        cancel_button = ttk.Button(
+            master=self.window, text="Cancel", command=self.login_view)
+        cancel_button.grid(padx=5, pady=5)
 
     def handle_create_user(self):
         username = self._username_entry.get()
