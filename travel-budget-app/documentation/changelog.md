@@ -1,4 +1,4 @@
-# Changes
+# Changelog
 
 ## Week 3
 - project initialized
