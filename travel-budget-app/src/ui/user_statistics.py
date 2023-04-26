@@ -55,9 +55,6 @@ class UserStats:
 
         back_button = ttk.Button(master=self._window, text="Back to menu")
 
-        # table?:
-        # groceries', 'restaurants', 'cafes', 'bars', 'laundry','transportation', 'accommodation', 'tickets', 'currency exchange commissions', 'activities', 'other
-
         back_button = ttk.Button(
             master=self._window, text="Back", command=self.user_menu_handle)
         back_button.grid(padx=5, pady=5)

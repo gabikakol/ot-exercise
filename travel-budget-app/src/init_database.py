@@ -30,7 +30,6 @@ def create_trips_tables(connection):
     cursor = connection.cursor()
     cursor.execute(
         """create table trips (trip_id text primary key, trip_name text, username text, duration text);""")
-    # add later: duration text, category text
     connection.commit()
 
 
@@ -38,7 +37,6 @@ def create_expenses_tables(connection):
     cursor = connection.cursor()
     cursor.execute(
         """create table expenses (expense_id text primary key,expense_description text, trip_id text, amount text, category text);""")
-    # add later: duration text, category text
     connection.commit()
 
 
@@ -59,10 +57,3 @@ def init_expenses_database():
     drop_expenses_tables(connection)
     create_expenses_tables(connection)
 
-
-"""
-if __name__ == "__main__":
-    init_users_database()
-    init_trips_database()
-    init_expenses_database()
-"""

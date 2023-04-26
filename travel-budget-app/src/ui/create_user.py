@@ -14,10 +14,6 @@ class CreateUser:
         self._password_entry2 = None
         self.error_variable = None
         self.error_label = None
-        #self.password_error_variable = None
-        #self.password_error_label = None
-        #self.input_error_variable = None
-        #self.input_error_label = None
         self.start()
 
     def start(self):
@@ -37,7 +33,8 @@ class CreateUser:
         self._password_entry1 = ttk.Entry(master=self._window)
         self._password_entry1.grid(padx=5, pady=5)
 
-        password_label2 = ttk.Label(master=self._window, text="Repeat password")
+        password_label2 = ttk.Label(
+            master=self._window, text="Repeat password")
         password_label2.grid(padx=5, pady=5)
         self._password_entry2 = ttk.Entry(master=self._window)
         self._password_entry2.grid(padx=5, pady=5)
@@ -47,16 +44,9 @@ class CreateUser:
         save_button.grid(padx=5, pady=5)
 
         self.error_variable = StringVar(self._window)
-        self.error_label = ttk.Label(master=self._window, textvariable=self.error_variable, foreground="red")
-        self.error_label.grid(padx=5,pady=5)
-
-        #self.password_error_variable = StringVar(self._window)
-        #self.password_error_label = ttk.Label(master=self._window, textvariable=self.password_error_variable, foreground="red")
-        #self.password_error_label.grid(padx=5,pady=5)
-
-        #self.input_error_variable = StringVar(self._window)
-        #self.input_error_label = ttk.Label(master=self._window, textvariable=self.input_error_variable, foreground="red")
-        #self.input_error_label.grid(padx=5,pady=5)
+        self.error_label = ttk.Label(
+            master=self._window, textvariable=self.error_variable, foreground="red")
+        self.error_label.grid(padx=5, pady=5)
 
         cancel_button = ttk.Button(
             master=self._window, text="Cancel", command=self.login_view)
@@ -75,18 +65,17 @@ class CreateUser:
             self.user_menu()
         except EmptyInputError:
             self.show_error("Username and password cannot be empty")
-        except UserExistsError: 
+        except UserExistsError:
             self.show_error(f"Username {username} already exists")
         except PasswordsDontMatchError:
             self.show_error("Passwords don't match")
 
-    def show_error(self,text):
+    def show_error(self, text):
         self.error_variable.set(text)
         self.error_label.grid()
 
     def hide_error(self):
         self.error_label.grid_remove()
-      
 
     def destroy(self):
         self._window.destroy()

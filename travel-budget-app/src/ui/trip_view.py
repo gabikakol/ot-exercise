@@ -36,8 +36,6 @@ class TripView:
             master=self._window, text="Back to trips menu", command=self.trips_list_handle)
         back_button.grid(padx=5, pady=5)
 
-        # add expense
-        # statistics
 
     def pack(self):
         self._window.pack()

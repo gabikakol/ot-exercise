@@ -40,13 +40,13 @@ class AddExpense:
         categories = ['select an option', 'groceries', 'restaurants', 'cafes', 'bars', 'laundry',
                       'transportation', 'accommodation', 'tickets', 'currency exchange commissions', 'activities', 'other']
         self.cat_var = StringVar(self._root)
-        # tkvar.set('Select an option')
         category_menu = ttk.OptionMenu(self._window, self.cat_var, *categories)
         category_menu.grid(padx=5, pady=5)
 
         self.error_variable = StringVar(self._window)
-        self.error_label = ttk.Label(master=self._window, textvariable=self.error_variable, foreground="red")
-        self.error_label.grid(padx=5,pady=5)
+        self.error_label = ttk.Label(
+            master=self._window, textvariable=self.error_variable, foreground="red")
+        self.error_label.grid(padx=5, pady=5)
 
         save_button = ttk.Button(
             master=self._window, text="Save", command=self.handle_add_expense)
@@ -57,9 +57,7 @@ class AddExpense:
         cancel_button.grid(padx=5, pady=5)
 
         self.hide_error()
-
-        # description, amount, category
-
+        
     def pack(self):
         self._window.pack()
 
@@ -77,14 +75,14 @@ class AddExpense:
         except EmptyInputError:
             self.show_error("Expense description and cost cannot be empty")
         except NotFloatError:
-            self.show_error("Expense cost has to be a numeric value (use '.' if input is a fraction)")
+            self.show_error(
+                "Expense cost has to be a numeric value (use '.' if input is a fraction)")
         except CatNotSelectedError:
             self.show_error("Category has to be selected")
 
-    def show_error(self,text):
+    def show_error(self, text):
         self.error_variable.set(text)
         self.error_label.grid()
-    
+
     def hide_error(self):
         self.error_label.grid_remove()
-

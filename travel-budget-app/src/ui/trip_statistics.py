@@ -42,17 +42,6 @@ class TripStats:
             master=self._window, text="The most expensive category:")
         expensive_category_label.grid(padx=5, pady=5)
 
-        # spent in total
-        # days (length of the trip)
-        # spent per day on average
-        # spent per category
-        # cheapest item
-        # most expensive item
-        # most expensive category
-
-        # table?:
-        # groceries', 'restaurants', 'cafes', 'bars', 'laundry','transportation', 'accommodation', 'tickets', 'currency exchange commissions', 'activities', 'other
-
         back_button = ttk.Button(
             master=self._window, text="Back", command=self.trip_view_handle)
         back_button.grid(padx=5, pady=5)

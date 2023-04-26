@@ -8,23 +8,16 @@ class TripService:
         self.trip_rep = trip_rep
         self.trip_id = None
         self.trip_name = None
-        """
-        self.username = None
-        self.trip_name = None
-        self.trip_duration = None
-        self.category = None
-        """
 
     def new_trip(self, username, trip_name, duration):
         if not trip_name or not duration:
             raise EmptyInputError("Trip name and duration cannot be empty")
-        
+
         if not duration.isdigit():
             raise NotIntegerError("Trip duration input has to be an integer")
 
         self.trip_rep.create_trip(
             Trip(None, username, trip_name, duration))
-        print("trip added successfully")
 
     def trip_login(self, id, name):
         self.trip_id = id

@@ -32,8 +32,9 @@ class Login:
         self._password_entry.grid(padx=5, pady=5)
 
         self.error_variable = StringVar(self._window)
-        self.error_label = ttk.Label(master=self._window, textvariable=self.error_variable, foreground="red")
-        self.error_label.grid(padx=5,pady=5)
+        self.error_label = ttk.Label(
+            master=self._window, textvariable=self.error_variable, foreground="red")
+        self.error_label.grid(padx=5, pady=5)
 
         login_button = ttk.Button(
             master=self._window, text="Login", command=self.handle_login)
@@ -54,31 +55,13 @@ class Login:
             self.user_menu_handle()
         except InvalidCridentialsError:
             self.show_error("Invalid username or password")
-        
-    def show_error(self,text):
+
+    def show_error(self, text):
         self.error_variable.set(text)
         self.error_label.grid()
 
     def hide_error(self):
         self.error_label.grid_remove()
-
-        """
-        self.error_variable = StringVar(self._window)
-        self.error_variable.set(text)
-        self.error_label.grid()
-
-        """
-    """"
-    def error_template(self):
-        self.error_variable = StringVar(self._window)
-        error_label = ttk.Label(
-            master=self._window,
-            textvariable=self.error_variable,
-            foreground="red"
-        )
-    """
-
-        #error_label.grid(padx=5, pady=5)
 
     def destroy(self):
         self._window.destroy()

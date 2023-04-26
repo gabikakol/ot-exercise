@@ -3,6 +3,7 @@ from services.trip_service import trip_service
 from services.user_service import user_service
 from errors.errors_handling import EmptyInputError, NotIntegerError
 
+
 class NewTrip:
     def __init__(self, root, trips_list):
         self._root = root
@@ -31,8 +32,9 @@ class NewTrip:
         self.duration_entry.grid(padx=5, pady=5)
 
         self.error_variable = StringVar(self._window)
-        self.error_label = ttk.Label(master=self._window, textvariable=self.error_variable, foreground="red")
-        self.error_label.grid(padx=5,pady=5)
+        self.error_label = ttk.Label(
+            master=self._window, textvariable=self.error_variable, foreground="red")
+        self.error_label.grid(padx=5, pady=5)
 
         save_button = ttk.Button(
             master=self._window, text="Save", command=self.handle_new_trip)
@@ -54,7 +56,7 @@ class NewTrip:
         username = user_service.get_username()
         trip_name = self.name_entry.get()
         duration = self.duration_entry.get()
-        
+
         self.hide_error()
         try:
             trip_service.new_trip(trip_name, username, duration)
@@ -64,7 +66,7 @@ class NewTrip:
         except NotIntegerError:
             self.show_error("Trip duration has to be an integer")
 
-    def show_error(self,text):
+    def show_error(self, text):
         self.error_variable.set(text)
         self.error_label.grid()
 
