@@ -1,6 +1,7 @@
 from tkinter import ttk, StringVar
 from services.expense_service import expense_service
 from services.trip_service import trip_service
+from errors.errors_handling import EmptyInputError, NotFloatError, CatNotSelectedError
 
 
 class AddExpense:
@@ -11,6 +12,8 @@ class AddExpense:
         self.description_entry = None
         self.amount_entry = None
         self.cat_var = None
+        self.error_variable = None
+        self.error_label = None
         self.start()
 
     def start(self):
@@ -41,6 +44,10 @@ class AddExpense:
         category_menu = ttk.OptionMenu(self._window, self.cat_var, *categories)
         category_menu.grid(padx=5, pady=5)
 
+        self.error_variable = StringVar(self._window)
+        self.error_label = ttk.Label(master=self._window, textvariable=self.error_variable, foreground="red")
+        self.error_label.grid(padx=5,pady=5)
+
         save_button = ttk.Button(
             master=self._window, text="Save", command=self.handle_add_expense)
         save_button.grid(padx=5, pady=5)
@@ -49,7 +56,7 @@ class AddExpense:
             master=self._window, text="Cancel", command=self.trip_view_handle)
         cancel_button.grid(padx=5, pady=5)
 
-        self._window.grid_columnconfigure(0, weight=1, minsize=400)
+        self.hide_error()
 
         # description, amount, category
 
@@ -64,5 +71,20 @@ class AddExpense:
         amount = self.amount_entry.get()
         category = self.cat_var.get()
         trip_id = trip_service.get_trip_id()
-        expense_service.add_expense(description, trip_id, amount, category)
-        self.trip_view_handle()
+        try:
+            expense_service.add_expense(description, trip_id, amount, category)
+            self.trip_view_handle()
+        except EmptyInputError:
+            self.show_error("Expense description and cost cannot be empty")
+        except NotFloatError:
+            self.show_error("Expense cost has to be a numeric value (use '.' if input is a fraction)")
+        except CatNotSelectedError:
+            self.show_error("Category has to be selected")
+
+    def show_error(self,text):
+        self.error_variable.set(text)
+        self.error_label.grid()
+    
+    def hide_error(self):
+        self.error_label.grid_remove()
+

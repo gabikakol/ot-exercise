@@ -2,6 +2,7 @@ from entities.user import User
 # from entities.trip import Trip
 from repositories.user_repository import user_repository
 # from repositories.trip_repository import trip_repository
+from errors.errors_handling import InvalidCridentialsError, UserExistsError, PasswordsDontMatchError, EmptyInputError
 
 
 class UserService:
@@ -10,25 +11,30 @@ class UserService:
         # self.trip_rep = trip_rep
         self.user = None
 
-    def new_user(self, username, password):
+    def new_user(self, username, password1, password2):
         exists = self.user_rep.find_user(username)
         if exists:
-            print('error username is not unique')
-            return None
+            raise UserExistsError(f"Username {username} already exists")
+            #print('error username is not unique')
+            #return None
             # change this
-        self.user_rep.create_user(User(username, password))
+        if not username:
+            raise EmptyInputError("Username input cannot be empty")
+        if not password1 or not password2:
+            raise EmptyInputError("Password input cannot be empty")
+        if password1 != password2:
+            raise PasswordsDontMatchError("Passwords don't match")
+        self.user_rep.create_user(User(username, password1))
         print('user created successfully')
-        self.login(username, password)
+        self.login(username, password1)
 
     def login(self, username, password):
         user = self.user_rep.find_user(username)
 
-        if not user:
-            print('error user doesnt exist')
-            return None
-        if password != user.password:
-            print('error incorrect password')
-            return None
+        if not user or password != user.password:
+            raise InvalidCridentialsError("Invalid username or password")
+            #print('error incorrect password')
+            #return None
         self.user = user
         print('login successfull')
         # case sensitive or not?

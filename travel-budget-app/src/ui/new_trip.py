@@ -1,7 +1,7 @@
 from tkinter import ttk, StringVar
 from services.trip_service import trip_service
 from services.user_service import user_service
-
+from errors.errors_handling import EmptyInputError, NotIntegerError
 
 class NewTrip:
     def __init__(self, root, trips_list):
@@ -10,6 +10,8 @@ class NewTrip:
         self._window = None
         self.name_entry = None
         self.duration_entry = None
+        self.error_variable = None
+        self.error_label = None
         self.start()
 
     def start(self):
@@ -28,6 +30,10 @@ class NewTrip:
         self.duration_entry = ttk.Entry(master=self._window)
         self.duration_entry.grid(padx=5, pady=5)
 
+        self.error_variable = StringVar(self._window)
+        self.error_label = ttk.Label(master=self._window, textvariable=self.error_variable, foreground="red")
+        self.error_label.grid(padx=5,pady=5)
+
         save_button = ttk.Button(
             master=self._window, text="Save", command=self.handle_new_trip)
         save_button.grid(padx=5, pady=5)
@@ -36,7 +42,7 @@ class NewTrip:
             master=self._window, text="Cancel", command=self.trips_list_handle)
         cancel_button.grid(padx=5, pady=5)
 
-        self._window.grid_columnconfigure(0, weight=1, minsize=400)
+        self.hide_error()
 
     def pack(self):
         self._window.pack()
@@ -48,5 +54,19 @@ class NewTrip:
         username = user_service.get_username()
         trip_name = self.name_entry.get()
         duration = self.duration_entry.get()
-        trip_service.new_trip(trip_name, username, duration)
-        self.trips_list_handle()
+        
+        self.hide_error()
+        try:
+            trip_service.new_trip(trip_name, username, duration)
+            self.trips_list_handle()
+        except EmptyInputError:
+            self.show_error("Trip name and duration cannot be empty")
+        except NotIntegerError:
+            self.show_error("Trip duration has to be an integer")
+
+    def show_error(self,text):
+        self.error_variable.set(text)
+        self.error_label.grid()
+
+    def hide_error(self):
+        self.error_label.grid_remove()
