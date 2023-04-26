@@ -22,17 +22,14 @@ class TripsList:
         header_label.grid(padx=5, pady=5)
 
         trips = trip_repository.find_all_trips()
+        empty = True
         for trip in trips:
             if trip.username == self.username:
                 self.init_trip(trip)
-            """
-            if trip.username == self.username:
-                name_label = ttk.Label(master=self._window, text=trip.trip_name)
-                name_label.grid(padx=5, pady=5, row=i,column=0)
-                more_button = ttk.Button(master=self._window, text="show more", command=self.trip_view_handle)
-                more_button.grid(padx=5,pady=5, row=i,column=1)
-                i += 1
-            """
+                empty = False
+        if empty:
+            none_label = ttk.Label(master=self._window, text="No trips yet")
+            none_label.grid(padx=5,pady=5)
 
         new_trip_button = ttk.Button(
             master=self._window, text="Create new trip", command=self.new_trip_handle)
@@ -41,8 +38,6 @@ class TripsList:
         back_button = ttk.Button(
             master=self._window, text="Back to menu", command=self.back_handle)
         back_button.grid(padx=5, pady=5)
-
-        self._window.grid_columnconfigure(0, weight=1, minsize=400)
 
     def pack(self):
         self._window.pack()
@@ -57,7 +52,7 @@ class TripsList:
         show_more_button = ttk.Button(
             master=self._window, text="show more", command=lambda: self.show_more_handle(trip))
         show_more_button.grid(padx=5, pady=5)
-        
+
     def show_more_handle(self, trip):
         trip_service.trip_login(trip.trip_id, trip.trip_name)
         self.trip_view_handle()

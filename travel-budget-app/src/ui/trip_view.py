@@ -21,8 +21,15 @@ class TripView:
         header_label.grid(padx=5, pady=5)
 
         expenses = expense_repository.find_all_expenses()
+        empty = True
         for exp in expenses:
-            self.init_expense(exp)
+            if exp.trip_id == self.trip_id:
+                self.init_expense(exp)
+                empty = False
+        if empty:
+            none_label = ttk.Label(master=self._window, text="No expenses yet")
+            none_label.grid(padx=5,pady=5)
+
 
         add_button = ttk.Button(master=self._window,
                                 text="Add expense", command=self.add_expense)
@@ -44,7 +51,6 @@ class TripView:
         self._window.destroy()
 
     def init_expense(self, exp):
-        if exp.trip_id == self.trip_id:
-            exp_label = ttk.Label(
-                master=self._window, text=f"{exp.description}: €{exp.amount}, category: {exp.category}")
-            exp_label.grid(padx=5, pady=5, column=0)
+        exp_label = ttk.Label(
+            master=self._window, text=f"{exp.description}: €{exp.amount}, category: {exp.category}")
+        exp_label.grid(padx=5, pady=5, column=0)
