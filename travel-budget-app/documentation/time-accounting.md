@@ -17,3 +17,5 @@
 |5      | 25.04.2023  | 6         |databases improvements, UI: user and trip statistics, add expense|
 |6      | 26.04.2023  | 4         |error handling|
 |6      | 02.05.2023  | 2         |UI improvements: user statistics|
+
+Total: 
