@@ -29,14 +29,14 @@ def create_user_tables(connection):
 def create_trips_tables(connection):
     cursor = connection.cursor()
     cursor.execute(
-        """create table trips (trip_id text primary key, trip_name text, username text, duration text);""")
+        """create table trips (trip_id text primary key, trip_name text, username text, duration text);""") #pylint: disable=line-too-long
     connection.commit()
 
 
 def create_expenses_tables(connection):
     cursor = connection.cursor()
     cursor.execute(
-        """create table expenses (expense_id text primary key,expense_description text, trip_id text, amount text, category text);""")
+        """create table expenses (expense_id text primary key,expense_description text, trip_id text, amount text, category text);""") #pylint: disable=line-too-long
     connection.commit()
 
 

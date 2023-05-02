@@ -8,14 +8,14 @@ class TripRepository:
 
     def create_trip(self, trip):
         cursor = self.connection.cursor()
-        cursor.execute("insert into trips (trip_id, trip_name, username, duration) values (?, ?, ?, ?);",
+        cursor.execute("insert into trips (trip_id, trip_name, username, duration) values (?, ?, ?, ?);", #pylint: disable=line-too-long
                        (trip.trip_id, trip.trip_name, trip.username, trip.duration))
         self.connection.commit()
 
     def find_all_trips(self):
         cursor = self.connection.cursor()
         rows = cursor.execute("select * from trips").fetchall()
-        return [Trip(row["trip_id"], row["trip_name"], row["username"], row["duration"]) for row in rows]
+        return [Trip(row["trip_id"], row["trip_name"], row["username"], row["duration"]) for row in rows] #pylint: disable=line-too-long
 
     def find_trip(self, trip_id):
         cursor = self.connection.cursor()

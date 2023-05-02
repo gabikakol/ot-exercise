@@ -8,14 +8,14 @@ class ExpenseRepository:
 
     def create_expense(self, expense):
         cursor = self.connection.cursor()
-        cursor.execute("insert into expenses (expense_id, expense_description, trip_id, amount, category) values (?,?,?,?,?);",
-                       (expense.expense_id, expense.description, expense.trip_id, expense.amount, expense.category))
+        cursor.execute("insert into expenses (expense_id, expense_description, trip_id, amount, category) values (?,?,?,?,?);", #pylint: disable=line-too-long
+                       (expense.expense_id, expense.description, expense.trip_id, expense.amount, expense.category)) #pylint: disable=line-too-long
         self.connection.commit()
 
     def find_all_expenses(self):
         cursor = self.connection.cursor()
         rows = cursor.execute("select * from expenses").fetchall()
-        return [Expense(row["expense_id"], row["expense_description"], row["trip_id"], row["amount"], row["category"]) for row in rows]
+        return [Expense(row["expense_id"], row["expense_description"], row["trip_id"], row["amount"], row["category"]) for row in rows] #pylint: disable=line-too-long
 
     def find_expense(self, expense_id):
         cursor = self.connection.cursor()
@@ -23,7 +23,7 @@ class ExpenseRepository:
             "select * from expenses where expense_id = ?", (expense_id,))
         row = cursor.fetchone()
         if row:
-            return Expense(row["expense_id"], row["expense_description"], row["trip_id"], row["amount"], row["category"])
+            return Expense(row["expense_id"], row["expense_description"], row["trip_id"], row["amount"], row["category"]) #pylint: disable=line-too-long
         return None
 
     def delete(self):
