@@ -20,7 +20,7 @@ class UserStats:
         stats_label.grid(padx=5, pady=5)
 
         counters = self.user_trips_counters()
-        #counters is a list, [0] is number of trips, index [1] is total number of days, index [2] is total spent by user
+        # counters is a list, [0] is number of trips, index [1] is total number of days, index [2] is total spent by user
 
         trips_number_label = ttk.Label(
             master=self._window, text=f"Total number of trips: {counters[0]}")
@@ -81,8 +81,8 @@ class UserStats:
                 days_counter += int(trip.duration)
                 total_spent_counter += self.trip_expenses_counter(trip.trip_id)
 
-        return [trips_counter,days_counter, total_spent_counter]
-    
+        return [trips_counter, days_counter, total_spent_counter]
+
     def trip_expenses_counter(self, trip_id):
         id = trip_id
         expenses = expense_repository.find_all_expenses()
