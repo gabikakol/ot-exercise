@@ -32,7 +32,8 @@ class UserRepository:
             username: unique username of the user
 
         Returns:
-            Particular User object if there exists such user in the database with the given username. 
+            Particular User object if there exists such 
+            user in the database with the given username. 
             Otherwise None
         """
 
@@ -59,7 +60,7 @@ class UserRepository:
         """
         Deletes all users from the 'users' database.
         """
-        
+
         cursor = self.connection.cursor()
         cursor.execute("delete from users")
         self.connection.commit()

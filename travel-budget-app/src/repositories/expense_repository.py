@@ -19,8 +19,10 @@ class ExpenseRepository:
         """
 
         cursor = self.connection.cursor()
-        cursor.execute("insert into expenses (expense_id, expense_description, trip_id, amount, category) values (?,?,?,?,?);",  # pylint: disable=line-too-long
-                       (expense.expense_id, expense.description, expense.trip_id, expense.amount, expense.category))  # pylint: disable=line-too-long
+        cursor.execute(
+            "insert into expenses (expense_id, expense_description, trip_id, amount, category) values (?,?,?,?,?);",  # pylint: disable=line-too-long
+            (expense.expense_id, expense.description,
+             expense.trip_id, expense.amount, expense.category))
         self.connection.commit()
 
     def find_all_expenses(self):
@@ -33,7 +35,8 @@ class ExpenseRepository:
 
         cursor = self.connection.cursor()
         rows = cursor.execute("select * from expenses").fetchall()
-        return [Expense(row["expense_id"], row["expense_description"], row["trip_id"], row["amount"], row["category"]) for row in rows]  # pylint: disable=line-too-long
+        return [Expense(row["expense_id"], row["expense_description"],
+                        row["trip_id"], row["amount"], row["category"]) for row in rows]
 
     def find_expense(self, expense_id):
         """
@@ -43,7 +46,8 @@ class ExpenseRepository:
             expense_id: unique id number of the expense
 
         Returns:
-            Particular Expense object if there exists such expense in the database with the given id. 
+            Particular Expense object if there exists such 
+            expense in the database with the given id. 
             Otherwise None
         """
 
@@ -52,7 +56,8 @@ class ExpenseRepository:
             "select * from expenses where expense_id = ?", (expense_id,))
         row = cursor.fetchone()
         if row:
-            return Expense(row["expense_id"], row["expense_description"], row["trip_id"], row["amount"], row["category"])  # pylint: disable=line-too-long
+            return Expense(row["expense_id"], row["expense_description"],
+                           row["trip_id"], row["amount"], row["category"])
         return None
 
     def delete(self):

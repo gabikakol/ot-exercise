@@ -57,7 +57,8 @@ def create_user_tables(connection):
 def create_trips_tables(connection):
     """
     Creates 'trips' tables for storing user's trips. 
-    For each trip, the following are stored: unique trip id, name of the trip, user's username, duration of the trip.  
+    For each trip, the following are stored: unique trip id, 
+    name of the trip, user's username, duration of the trip.  
 
     Args: 
         connection: Connection object for connecting with the database
@@ -72,7 +73,8 @@ def create_trips_tables(connection):
 def create_expenses_tables(connection):
     """
     Creates 'expenses' tables for storing trips' expenses. 
-    For each expense, the following are stored: unique expense id, description of the expense, corresponding trip id, amount paid, category of the expense.  
+    For each expense, the following are stored: unique expense id, 
+    description of the expense, corresponding trip id, amount paid, category of the expense.  
 
     Args: 
         connection: Connection object for connecting with the database
