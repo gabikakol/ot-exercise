@@ -35,7 +35,7 @@ class UserStats:
         spent_total_label.grid(padx=5, pady=5)
 
         average_trip_label = ttk.Label(
-            master=self._window, text=f"Spent per trip on average:€{(counters[2]/counters[0]):.2f}")
+            master=self._window, text=f"Spent per trip on average: €{(counters[2]/counters[0]):.2f}")
         average_trip_label.grid(padx=5, pady=5)
 
         average_day_label = ttk.Label(
