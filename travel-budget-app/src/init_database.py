@@ -56,4 +56,3 @@ def init_expenses_database():
     connection = get_database_connection()
     drop_expenses_tables(connection)
     create_expenses_tables(connection)
-

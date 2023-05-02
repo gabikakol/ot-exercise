@@ -15,3 +15,4 @@
 |5      | 20.04.2023  | 2         |databases for trips and expenses created, connected to UI|
 |5      | 23.04.2023  | 3         |UI improvements|
 |5      | 25.04.2023  | 6         |databases improvements, UI: user and trip statistics, add expense|
+|6      | 26.04.2023  | 4         |error handling|

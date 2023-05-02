@@ -19,7 +19,7 @@ class TripStats:
         self._window = ttk.Frame(master=self._root)
 
         stats_label = ttk.Label(
-            master=self._window, text=f"Statistics of the {self.trip_name} trip:")
+            master=self._window, text=f"Statistics of the {self.trip_name} trip")
         stats_label.grid(padx=5, pady=5)
 
         sum = self.spent_total()
@@ -59,7 +59,7 @@ class TripStats:
                 sum += float(exp.amount)
 
         spent_total_label = ttk.Label(
-            master=self._window, text=f"Spent in total: €{sum}")
+            master=self._window, text=f"Spent in total: €{sum:.2f}")
         spent_total_label.grid(padx=5, pady=5)
         return sum
 
@@ -71,5 +71,5 @@ class TripStats:
     def spent_per_day(self, sum):
         average = sum/int(self.current_trip.duration)
         average_day_label = ttk.Label(
-            master=self._window, text=f"Spent per day on average: €{average}")
+            master=self._window, text=f"Spent per day on average: €{average:.2f}")
         average_day_label.grid(padx=5, pady=5)

@@ -24,4 +24,3 @@ class NotFloatError(Exception):
 
 class CatNotSelectedError(Exception):
     pass
-

@@ -29,7 +29,7 @@ class TripsList:
                 empty = False
         if empty:
             none_label = ttk.Label(master=self._window, text="No trips yet")
-            none_label.grid(padx=5,pady=5)
+            none_label.grid(padx=5, pady=5)
 
         new_trip_button = ttk.Button(
             master=self._window, text="Create new trip", command=self.new_trip_handle)

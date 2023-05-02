@@ -57,7 +57,7 @@ class AddExpense:
         cancel_button.grid(padx=5, pady=5)
 
         self.hide_error()
-        
+
     def pack(self):
         self._window.pack()
 

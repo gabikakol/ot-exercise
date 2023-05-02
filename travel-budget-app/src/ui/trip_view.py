@@ -28,8 +28,7 @@ class TripView:
                 empty = False
         if empty:
             none_label = ttk.Label(master=self._window, text="No expenses yet")
-            none_label.grid(padx=5,pady=5)
-
+            none_label.grid(padx=5, pady=5)
 
         add_button = ttk.Button(master=self._window,
                                 text="Add expense", command=self.add_expense)
@@ -43,7 +42,6 @@ class TripView:
             master=self._window, text="Back to trips menu", command=self.trips_list_handle)
         back_button.grid(padx=5, pady=5)
 
-
     def pack(self):
         self._window.pack()
 
@@ -52,5 +50,5 @@ class TripView:
 
     def init_expense(self, exp):
         exp_label = ttk.Label(
-            master=self._window, text=f"{exp.description}: €{exp.amount}, category: {exp.category}")
+            master=self._window, text=f"{exp.description}: €{float(exp.amount):.2f}, category: {exp.category}")
         exp_label.grid(padx=5, pady=5, column=0)
