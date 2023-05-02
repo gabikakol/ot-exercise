@@ -38,7 +38,7 @@ poetry run coverage-report
 ### Pylint
 Pylint analysis can be viewed with the command: 
 ```
-poetry run invoke lints
+poetry run invoke lint
 ```
 ### Formatting
 Code can be formatted using autopep8 with the command: 
