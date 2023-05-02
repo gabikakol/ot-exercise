@@ -4,7 +4,11 @@ from errors.errors_handling import EmptyInputError, NotIntegerError
 
 
 class TripService:
+    """Class responsible for the application logic related to trips """
+
     def __init__(self, trip_rep=trip_repository):
+        """class constructor"""
+
         self.trip_rep = trip_rep
         self.trip_id = None
         self.trip_name = None

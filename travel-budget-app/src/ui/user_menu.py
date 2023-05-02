@@ -3,7 +3,11 @@ from services.user_service import user_service
 
 
 class UserMenu:
+    """Class for user's main menu ui"""
+
     def __init__(self, root, logout_view, trips_list, new_trip, user_stats):
+        """class constructor"""
+
         self._root = root
         self.logout_handle = logout_view
         self.my_trips_handle = trips_list
@@ -16,6 +20,7 @@ class UserMenu:
         self.start()
 
     def start(self):
+
         self._window = ttk.Frame(master=self._root)
 
         user_label = ttk.Label(master=self._window,
@@ -41,7 +46,9 @@ class UserMenu:
         self._window.grid_columnconfigure(0, weight=1, minsize=400)
 
     def pack(self):
+        """displays the current view"""
         self._window.pack()
 
     def destroy(self):
+        """resets the current view"""
         self._window.destroy()

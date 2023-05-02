@@ -4,7 +4,11 @@ from repositories.expense_repository import expense_repository
 
 
 class TripView:
+    """Class for trip's data ui"""
+
     def __init__(self, root, trips_list, add_expense, trip_stats):
+        """class constructor"""
+
         self._root = root
         self.trips_list_handle = trips_list
         self._window = None
@@ -12,9 +16,11 @@ class TripView:
         self.trip_name = trip_service.get_trip_name()
         self.trip_id = trip_service.get_trip_id()
         self.trip_stats_handle = trip_stats
+
         self.start()
 
     def start(self):
+
         self._window = ttk.Frame(master=self._root)
         header_label = ttk.Label(
             master=self._window, text=f"Expenses of the {self.trip_name} trip:")
@@ -43,9 +49,11 @@ class TripView:
         back_button.grid(padx=5, pady=5)
 
     def pack(self):
+        """displays the current view"""
         self._window.pack()
 
     def destroy(self):
+        """resets the current view"""
         self._window.destroy()
 
     def init_expense(self, exp):

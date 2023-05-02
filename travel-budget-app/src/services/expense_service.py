@@ -4,7 +4,11 @@ from errors.errors_handling import EmptyInputError, NotFloatError, CatNotSelecte
 
 
 class ExpenseService:
+    """Class responsible for the application logic related to expenses """
+
     def __init__(self, expense_rep=expense_repository):
+        """class constructor"""
+
         self.expense_rep = expense_rep
         self.expense = None
 

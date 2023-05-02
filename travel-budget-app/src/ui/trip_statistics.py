@@ -5,7 +5,11 @@ from repositories.trip_repository import trip_repository
 
 
 class TripStats:
+    """Class for trip's statistics ui"""
+
     def __init__(self, root, trip_view):
+        """class contructor"""
+
         self._root = root
         self.trip_view_handle = trip_view
         self._window = None
@@ -47,9 +51,11 @@ class TripStats:
         back_button.grid(padx=5, pady=5)
 
     def pack(self):
+        """displays the current view"""
         self._window.pack()
 
     def destroy(self):
+        """resets the current view"""
         self._window.destroy()
 
     def spent_total(self):

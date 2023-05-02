@@ -5,11 +5,16 @@ from repositories.expense_repository import expense_repository
 
 
 class UserStats:
+    """Class for user's statistics ui"""
+
     def __init__(self, root, user_menu):
+        """class constructor"""
+
         self._root = root
         self._window = None
         self.username = user_service.get_username()
         self.user_menu_handle = user_menu
+
         self.start()
 
     def start(self):
@@ -20,7 +25,12 @@ class UserStats:
         stats_label.grid(padx=5, pady=5)
 
         counters = self.user_trips_counters()
-        # counters is a list, [0] is number of trips, index [1] is total number of days, index [2] is total spent by user
+        """
+        counters is a list with following:
+        - total number of trips at index 0 
+        - total number of travel days at index 1
+        - total amount (EUR) spent during all trips at index 2
+        """
 
         trips_number_label = ttk.Label(
             master=self._window, text=f"Total number of trips: {counters[0]}")
@@ -65,9 +75,11 @@ class UserStats:
         back_button.grid(padx=5, pady=5)
 
     def pack(self):
+        """displays the current view"""
         self._window.pack()
 
     def destroy(self):
+        """resets the current view"""
         self._window.destroy()
 
     def user_trips_counters(self):

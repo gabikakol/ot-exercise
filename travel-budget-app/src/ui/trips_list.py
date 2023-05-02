@@ -5,13 +5,18 @@ from services.trip_service import trip_service
 
 
 class TripsList:
+    """Class for user's trips ui"""
+
     def __init__(self, root, user_menu, new_trip, trip_view):
+        """class constructor"""
+
         self._root = root
         self._window = None
         self.username = user_service.get_username()
         self.back_handle = user_menu
         self.new_trip_handle = new_trip
         self.trip_view_handle = trip_view
+
         self.start()
 
     def start(self):
@@ -40,9 +45,11 @@ class TripsList:
         back_button.grid(padx=5, pady=5)
 
     def pack(self):
+        """displays the current view"""
         self._window.pack()
 
     def destroy(self):
+        """resets the current view"""
         self._window.destroy()
 
     def init_trip(self, trip):

@@ -1,10 +1,14 @@
 from entities.user import User
 from repositories.user_repository import user_repository
-from errors.errors_handling import InvalidCridentialsError, UserExistsError, PasswordsDontMatchError, EmptyInputError #pylint: disable=line-too-long
+from errors.errors_handling import InvalidCridentialsError, UserExistsError, PasswordsDontMatchError, EmptyInputError  # pylint: disable=line-too-long
 
 
 class UserService:
+    """Class responsible for the application logic related to users"""
+
     def __init__(self, user_rep=user_repository):
+        """class constructor"""
+
         self.user_rep = user_rep
         self.user = None
 

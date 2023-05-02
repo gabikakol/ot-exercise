@@ -5,7 +5,11 @@ from errors.errors_handling import EmptyInputError, NotIntegerError
 
 
 class NewTrip:
+    """Class for creating a new trip ui"""
+
     def __init__(self, root, trips_list):
+        """class contructor"""
+
         self._root = root
         self.trips_list_handle = trips_list
         self._window = None
@@ -13,6 +17,7 @@ class NewTrip:
         self.duration_entry = None
         self.error_variable = None
         self.error_label = None
+
         self.start()
 
     def start(self):
@@ -47,9 +52,11 @@ class NewTrip:
         self.hide_error()
 
     def pack(self):
+        """diplays the current view"""
         self._window.pack()
 
     def destroy(self):
+        """resets the current view"""
         self._window.destroy()
 
     def handle_new_trip(self):
@@ -58,6 +65,7 @@ class NewTrip:
         duration = self.duration_entry.get()
 
         self.hide_error()
+
         try:
             trip_service.new_trip(trip_name, username, duration)
             self.trips_list_handle()

@@ -5,7 +5,11 @@ from errors.errors_handling import EmptyInputError, NotFloatError, CatNotSelecte
 
 
 class AddExpense:
+    """Class for adding new expense ui"""
+
     def __init__(self, root, trip_view):
+        """class constructor"""
+
         self._root = root
         self._window = None
         self.trip_view_handle = trip_view
@@ -14,9 +18,11 @@ class AddExpense:
         self.cat_var = None
         self.error_variable = None
         self.error_label = None
+
         self.start()
 
     def start(self):
+
         self._window = ttk.Frame(master=self._root)
 
         header_label = ttk.Label(master=self._window, text="Add an expense:")
@@ -59,16 +65,20 @@ class AddExpense:
         self.hide_error()
 
     def pack(self):
+        """displays the current view"""
         self._window.pack()
 
     def destroy(self):
+        """resets the current view"""
         self._window.destroy()
 
     def handle_add_expense(self):
+
         description = self.description_entry.get()
         amount = self.amount_entry.get()
         category = self.cat_var.get()
         trip_id = trip_service.get_trip_id()
+
         try:
             expense_service.add_expense(description, trip_id, amount, category)
             self.trip_view_handle()
@@ -81,6 +91,7 @@ class AddExpense:
             self.show_error("Category has to be selected")
 
     def show_error(self, text):
+
         self.error_variable.set(text)
         self.error_label.grid()
 

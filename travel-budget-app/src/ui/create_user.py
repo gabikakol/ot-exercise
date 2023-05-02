@@ -4,7 +4,11 @@ from errors.errors_handling import UserExistsError, PasswordsDontMatchError, Emp
 
 
 class CreateUser:
+    """Class for creating a new user ui"""
+
     def __init__(self, root, user_menu, login_view):
+        """class constructor"""
+
         self._root = root
         self.user_menu = user_menu
         self.login_view = login_view
@@ -14,9 +18,11 @@ class CreateUser:
         self._password_entry2 = None
         self.error_variable = None
         self.error_label = None
+
         self.start()
 
     def start(self):
+
         self._window = ttk.Frame(master=self._root)
 
         heading_label = ttk.Label(
@@ -60,6 +66,7 @@ class CreateUser:
         password2 = self._password_entry2.get()
 
         self.hide_error()
+
         try:
             user_service.new_user(username, password1, password2)
             self.user_menu()
@@ -78,7 +85,9 @@ class CreateUser:
         self.error_label.grid_remove()
 
     def destroy(self):
+        """resets the current view"""
         self._window.destroy()
 
     def pack(self):
+        """displays the current view"""
         self._window.pack()

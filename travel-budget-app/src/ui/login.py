@@ -4,7 +4,11 @@ from errors.errors_handling import InvalidCridentialsError
 
 
 class Login:
+    """Class for login ui"""
+
     def __init__(self, root, user_menu, create_user_view):
+        """class contructor"""
+
         self._root = root
         self.user_menu_handle = user_menu
         self.create_user = create_user_view
@@ -13,6 +17,7 @@ class Login:
         self._window = None
         self.error_variable = None
         self.error_label = None
+
         self.start()
 
     def start(self):
@@ -64,7 +69,9 @@ class Login:
         self.error_label.grid_remove()
 
     def destroy(self):
+        """displays the current view"""
         self._window.destroy()
 
     def pack(self):
+        """resets the current view"""
         self._window.pack()
