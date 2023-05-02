@@ -19,8 +19,8 @@ class TripService:
         self.trip_rep.create_trip(
             Trip(None, username, trip_name, duration))
 
-    def trip_login(self, id, name):
-        self.trip_id = id
+    def trip_login(self, trip_id, name):
+        self.trip_id = trip_id
         self.trip_name = name
 
     def get_trip_id(self):
