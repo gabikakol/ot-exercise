@@ -40,8 +40,6 @@ class TripStats:
         at each index: a tuple with category name at index 0 and cost (as a float number) at index 1
         """
 
-        print(stats)
-
         cheapest_category_label = ttk.Label(
             master=self._window, text=f"The cheapest category: {stats[0][0]} (€{(stats[0][1]):.2f})")
         cheapest_category_label.grid(padx=5, pady=5)
