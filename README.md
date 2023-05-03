@@ -33,7 +33,7 @@ poetry run invoke test
 ### Test coverage
 Test coverage is generated with the command:
 ```
-poetry run coverage-report
+poetry run invoke coverage-report
 ```
 ### Pylint
 Pylint analysis can be viewed with the command: 
