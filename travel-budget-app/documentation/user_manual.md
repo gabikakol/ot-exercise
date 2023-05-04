@@ -1,6 +1,7 @@
 # User manual
 
 ## Starting the program
+Run the following commands in ```/software-dev-exercises/travel-budget-app```
 1. Install dependencies with the command:
 ```
 poetry install
