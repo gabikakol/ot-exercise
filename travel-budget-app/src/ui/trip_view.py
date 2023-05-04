@@ -58,5 +58,5 @@ class TripView:
 
     def init_expense(self, exp):
         exp_label = ttk.Label(
-            master=self._window, text=f"{exp.description}: €{float(exp.amount):.2f}, category: {exp.category}")
+            master=self._window, text=f"{exp.description}: €{float(exp.amount):.2f}, cat: {exp.category}")
         exp_label.grid(padx=5, pady=5, column=0)

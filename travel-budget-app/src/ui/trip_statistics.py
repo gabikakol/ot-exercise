@@ -27,8 +27,19 @@ class TripStats:
         stats_label.grid(padx=5, pady=5)
 
         sum = self.spent_total()
-        self.trip_duration()
-        self.spent_per_day(sum)
+
+        spent_total_label = ttk.Label(
+            master=self._window, text=f"Spent in total: €{sum:.2f}")
+        spent_total_label.grid(padx=5, pady=5)
+
+        duration_label = ttk.Label(
+            master=self._window, text=f"Duration of the trip: {self.current_trip.duration} days")
+        duration_label.grid(padx=5, pady=5)
+
+        average = sum/int(self.current_trip.duration)
+        average_day_label = ttk.Label(
+            master=self._window, text=f"Spent per day on average: €{average:.2f}")
+        average_day_label.grid(padx=5, pady=5)
 
         stats = self.stats_sorting()
         """
@@ -74,22 +85,7 @@ class TripStats:
         sum = 0
         for exp in self.expenses:
             sum += float(exp.amount)
-
-        spent_total_label = ttk.Label(
-            master=self._window, text=f"Spent in total: €{sum:.2f}")
-        spent_total_label.grid(padx=5, pady=5)
-        return sum
-
-    def trip_duration(self):
-        duration_label = ttk.Label(
-            master=self._window, text=f"Duration of the trip: {self.current_trip.duration} days")
-        duration_label.grid(padx=5, pady=5)
-
-    def spent_per_day(self, sum):
-        average = sum/int(self.current_trip.duration)
-        average_day_label = ttk.Label(
-            master=self._window, text=f"Spent per day on average: €{average:.2f}")
-        average_day_label.grid(padx=5, pady=5)
+        return sum        
 
     def stats_sorting(self):
         dic = {}
