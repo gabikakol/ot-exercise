@@ -13,6 +13,7 @@ Application allows you to track your travel expenses and view statistics.
 - [time accounting](travel-budget-app/documentation/time-accounting.md)
 
 ## Command line functions
+The following commands must be ran in ```/software-dev-exercises/travel-budget-app```
 
 ### Program initialization
 The application is first initialized with the following command:
