@@ -1,25 +1,26 @@
 # Specification
 
 ## Purpose
-The purpose of the app is to track the spendings while traveling, divide them into cathegories, and see the statistics (total, per day, per cathegory, the cheapest and the most expensive) of both current and past trips. 
+The purpose of the app is to track the spendings while traveling, divide them into cathegories, and see the statistics (total, per day, the cheapest and the most expensive) of both current and past trips. 
 
 ## Users
-The program is used by one user at the time. Each user has an unique username and a non-empty password. Users do not interact with other users. Each user has its own trips with statistics. 
+The program is used by one user at the time. Each user has an unique username and a non-empty password. Users do not interact with other users. Each user has its own trips with expenses, and statistics. 
 
 ## User interface
 <img src="UI-plan.jpg"> 
 
 ## Functionality
 
-### Before login *(all done)*
+### Before login
 - New user:
     - creates an unique username
     - created a valid password
+    - system informs if username already exists
 - Existing user:
     - logs in using the previosuly created username and the corresponding password
     - system informs if the username is not found or the password is incorrect
 
-### After login *(all done)*
+### After login
 User chooses one of 4 functionalities:
 1. My trips
     - redirects to the "My trips" window 
@@ -30,30 +31,28 @@ User chooses one of 4 functionalities:
 5. Log out
     - redirects back to login menu 
 
-### Creating new trip *(all done)*
+### Creating new trip
 User is asked to input:
 - name of the trip
 - duration (in days)
 
-### Viewing a trip *(all done)*
+### Viewing a trip
 - list of expenses displayed
 - for each expense:
     - name of expense
     - cost
     - category
 
-### Adding an expense *(all done)*
+### Adding an expense
 User is asked to input:
 - description
 - amount (costs in EUR)
-- cathegory (choose from: groceries, transportation, accommodation, restaurants, bars, cafes, shopping, activities, entertainment, currency exchange comissions, laundry, other)
+- cathegory (choose from: *groceries, transportation, accommodation, restaurants, bars, cafes, shopping, activities, entertainment, currency exchange comissions, laundry, other*)
 
 ### Trip statistics
-- spent in total *(done)*
-- duration of the trip *(done)*
-- spent per day (on average) *(done)*
-- spent each day (displayed in a table)
-- spent per category (displayed in a table)
+- spent in total
+- duration of the trip
+- spent per day (on average)
 - the cheapest and the most expensive item/expense
 - the cheapest and the most expensive category
 
@@ -71,3 +70,4 @@ User is asked to input:
 - expense and trip deletion
 - user deletion
 - currency exchange calculator
+- adding location and a picture of a trip
