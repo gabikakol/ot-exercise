@@ -23,22 +23,22 @@ class TripStats:
         self._window = ttk.Frame(master=self._root)
 
         stats_label = ttk.Label(
-            master=self._window, text=f"Statistics of the {self.trip_name} trip")
+            master=self._window, text=f"Statistics of the {self.trip_name} trip", font=('consolas', 13, "bold"))
         stats_label.grid(padx=5, pady=5)
 
         sum = self.spent_total()
 
         spent_total_label = ttk.Label(
-            master=self._window, text=f"Spent in total: €{sum:.2f}")
+            master=self._window, text=f"Spent in total: €{sum:.2f}", font=('consolas', 10))
         spent_total_label.grid(padx=5, pady=5)
 
         duration_label = ttk.Label(
-            master=self._window, text=f"Duration of the trip: {self.current_trip.duration} days")
+            master=self._window, text=f"Duration of the trip: {self.current_trip.duration} days", font=('consolas', 10))
         duration_label.grid(padx=5, pady=5)
 
         average = sum/int(self.current_trip.duration)
         average_day_label = ttk.Label(
-            master=self._window, text=f"Spent per day on average: €{average:.2f}")
+            master=self._window, text=f"Spent per day on average: €{average:.2f}", font=('consolas', 10))
         average_day_label.grid(padx=5, pady=5)
 
         stats = self.stats_sorting()
@@ -52,19 +52,19 @@ class TripStats:
         """
 
         cheapest_category_label = ttk.Label(
-            master=self._window, text=f"The cheapest category: {stats[0][0]} (€{(stats[0][1]):.2f})")
+            master=self._window, text=f"The cheapest category: {stats[0][0]} (€{(stats[0][1]):.2f})", font=('consolas', 10))
         cheapest_category_label.grid(padx=5, pady=5)
 
         expensive_category_label = ttk.Label(
-            master=self._window, text=f"The most expensive category: {stats[1][0]} (€{(stats[1][1]):.2f})")
+            master=self._window, text=f"The most expensive category: {stats[1][0]} (€{(stats[1][1]):.2f})", font=('consolas', 10))
         expensive_category_label.grid(padx=5, pady=5)
 
         cheapest_label = ttk.Label(
-            master=self._window, text=f"The cheapest item: {stats[2][0]} (€{(stats[2][1]):.2f})")
+            master=self._window, text=f"The cheapest item: {stats[2][0]} (€{(stats[2][1]):.2f})", font=('consolas', 10))
         cheapest_label.grid(padx=5, pady=5)
 
         expensive_label = ttk.Label(
-            master=self._window, text=f"The most expensive item: {stats[3][0]} (€{(stats[3][1]):.2f})")
+            master=self._window, text=f"The most expensive item: {stats[3][0]} (€{(stats[3][1]):.2f})", font=('consolas', 10))
         expensive_label.grid(padx=5, pady=5)
 
         back_button = ttk.Button(

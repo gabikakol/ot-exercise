@@ -23,22 +23,22 @@ class Login:
     def start(self):
         self._window = ttk.Frame(master=self._root)
 
-        heading_label = ttk.Label(master=self._window, text="Login")
+        heading_label = ttk.Label(master=self._window, text="LOGIN", font=('consolas', 13, "bold"))
         heading_label.grid(padx=5, pady=5)
 
-        username_label = ttk.Label(master=self._window, text="Username")
+        username_label = ttk.Label(master=self._window, text="Username:", font=('consolas', 10, "bold"))
         username_label.grid(padx=5, pady=5)
         self._username_entry = ttk.Entry(master=self._window)
         self._username_entry.grid(padx=5, pady=5)
 
-        password_label = ttk.Label(master=self._window, text="Password")
+        password_label = ttk.Label(master=self._window, text="Password:", font=('consolas', 10, "bold"))
         password_label.grid(padx=5, pady=5)
-        self._password_entry = ttk.Entry(master=self._window)
+        self._password_entry = ttk.Entry(master=self._window, show = "*")
         self._password_entry.grid(padx=5, pady=5)
 
         self.error_variable = StringVar(self._window)
         self.error_label = ttk.Label(
-            master=self._window, textvariable=self.error_variable, foreground="red")
+            master=self._window, textvariable=self.error_variable, foreground="red", font=('consolas', 10, "bold"))
         self.error_label.grid(padx=5, pady=5)
 
         login_button = ttk.Button(
@@ -59,7 +59,7 @@ class Login:
             user_service.login(username, password)
             self.user_menu_handle()
         except InvalidCridentialsError:
-            self.show_error("Invalid username or password")
+            self.show_error("Invalid username or password.")
 
     def show_error(self, text):
         self.error_variable.set(text)

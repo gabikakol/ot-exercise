@@ -23,22 +23,22 @@ class NewTrip:
     def start(self):
         self._window = ttk.Frame(master=self._root)
 
-        header_label = ttk.Label(master=self._window, text="New trip")
+        header_label = ttk.Label(master=self._window, text="CREATE A NEW TRIP", font=('consolas', 13, "bold"))
         header_label.grid(padx=5, pady=5)
 
-        name_label = ttk.Label(master=self._window, text="Name")
+        name_label = ttk.Label(master=self._window, text="Name:", font=('consolas', 10, "bold"))
         name_label.grid(padx=5, pady=5)
         self.name_entry = ttk.Entry(master=self._window)
         self.name_entry.grid(padx=5, pady=5)
 
-        duration_label = ttk.Label(master=self._window, text="Duration (days)")
+        duration_label = ttk.Label(master=self._window, text="Duration (days):", font=('consolas', 10, "bold"))
         duration_label.grid(padx=5, pady=5)
         self.duration_entry = ttk.Entry(master=self._window)
         self.duration_entry.grid(padx=5, pady=5)
 
         self.error_variable = StringVar(self._window)
         self.error_label = ttk.Label(
-            master=self._window, textvariable=self.error_variable, foreground="red")
+            master=self._window, textvariable=self.error_variable, foreground="red", font=('consolas', 10, "bold"))
         self.error_label.grid(padx=5, pady=5)
 
         save_button = ttk.Button(
@@ -70,9 +70,9 @@ class NewTrip:
             trip_service.new_trip(trip_name, username, duration)
             self.trips_list_handle()
         except EmptyInputError:
-            self.show_error("Trip name and duration cannot be empty")
+            self.show_error("Trip name and duration cannot be empty.")
         except NotIntegerError:
-            self.show_error("Trip duration has to be an integer")
+            self.show_error("Trip duration must be an integer.")
 
     def show_error(self, text):
         self.error_variable.set(text)

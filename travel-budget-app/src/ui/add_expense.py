@@ -25,22 +25,22 @@ class AddExpense:
 
         self._window = ttk.Frame(master=self._root)
 
-        header_label = ttk.Label(master=self._window, text="Add an expense:")
+        header_label = ttk.Label(master=self._window, text="ADD AN EXPENSE", font=('consolas', 13, "bold"))
         header_label.grid(padx=5, pady=5)
 
-        description_label = ttk.Label(master=self._window, text="Description:")
+        description_label = ttk.Label(master=self._window, text="Description:", font=('consolas', 10, "bold"))
         description_label.grid(padx=5, pady=5)
 
         self.description_entry = ttk.Entry(master=self._window)
         self.description_entry.grid(padx=5, pady=5)
 
-        amount_label = ttk.Label(master=self._window, text="Cost (EUR):")
+        amount_label = ttk.Label(master=self._window, text="Cost (EUR):", font=('consolas', 10, "bold"))
         amount_label.grid(padx=5, pady=5)
 
         self.amount_entry = ttk.Entry(master=self._window)
         self.amount_entry.grid(padx=5, pady=5)
 
-        category_label = ttk.Label(master=self._window, text="Category:")
+        category_label = ttk.Label(master=self._window, text="Category:", font=('consolas', 10, "bold"))
         category_label.grid(padx=5, pady=5)
 
         categories = ['select an option', 'groceries', 'restaurants', 'cafes', 'bars', 'laundry',
@@ -51,7 +51,7 @@ class AddExpense:
 
         self.error_variable = StringVar(self._window)
         self.error_label = ttk.Label(
-            master=self._window, textvariable=self.error_variable, foreground="red")
+            master=self._window, textvariable=self.error_variable, foreground="red", font=('consolas', 10, "bold"))
         self.error_label.grid(padx=5, pady=5)
 
         save_button = ttk.Button(
@@ -83,12 +83,12 @@ class AddExpense:
             expense_service.add_expense(description, trip_id, amount, category)
             self.trip_view_handle()
         except EmptyInputError:
-            self.show_error("Expense description and cost cannot be empty")
+            self.show_error("Expense description and cost cannot be empty.")
         except NotFloatError:
             self.show_error(
-                "Expense cost has to be a numeric value (use '.' if input is a fraction)")
+                "Expense cost has to be a numeric value (use '.' if input is a fraction).")
         except CatNotSelectedError:
-            self.show_error("Category has to be selected")
+            self.show_error("Category has to be selected.")
 
     def show_error(self, text):
 

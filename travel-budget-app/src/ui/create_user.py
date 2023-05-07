@@ -26,23 +26,23 @@ class CreateUser:
         self._window = ttk.Frame(master=self._root)
 
         heading_label = ttk.Label(
-            master=self._window, text="Create a new user:")
+            master=self._window, text="CREATE A NEW USER", font=('consolas', 13, "bold"))
         heading_label.grid(padx=5, pady=5)
 
-        username_label = ttk.Label(master=self._window, text="Username")
+        username_label = ttk.Label(master=self._window, text="Username:", font=('consolas', 10, "bold"))
         username_label.grid(padx=5, pady=5)
         self._username_entry = ttk.Entry(master=self._window)
         self._username_entry.grid(padx=5, pady=5)
 
-        password_label1 = ttk.Label(master=self._window, text="Password")
+        password_label1 = ttk.Label(master=self._window, text="Password:", font=('consolas', 10, "bold"))
         password_label1.grid(padx=5, pady=5)
-        self._password_entry1 = ttk.Entry(master=self._window)
+        self._password_entry1 = ttk.Entry(master=self._window, show = "*")
         self._password_entry1.grid(padx=5, pady=5)
 
         password_label2 = ttk.Label(
-            master=self._window, text="Repeat password")
+            master=self._window, text="Repeat password:", font=('consolas', 10, "bold"))
         password_label2.grid(padx=5, pady=5)
-        self._password_entry2 = ttk.Entry(master=self._window)
+        self._password_entry2 = ttk.Entry(master=self._window, show = "*")
         self._password_entry2.grid(padx=5, pady=5)
 
         save_button = ttk.Button(
@@ -51,7 +51,7 @@ class CreateUser:
 
         self.error_variable = StringVar(self._window)
         self.error_label = ttk.Label(
-            master=self._window, textvariable=self.error_variable, foreground="red")
+            master=self._window, textvariable=self.error_variable, foreground="red", font=('consolas', 10, "bold"))
         self.error_label.grid(padx=5, pady=5)
 
         cancel_button = ttk.Button(
@@ -71,11 +71,11 @@ class CreateUser:
             user_service.new_user(username, password1, password2)
             self.user_menu()
         except EmptyInputError:
-            self.show_error("Username and password cannot be empty")
+            self.show_error("Username and password cannot be empty.")
         except UserExistsError:
-            self.show_error(f"Username {username} already exists")
+            self.show_error(f"Username {username} already exists.")
         except PasswordsDontMatchError:
-            self.show_error("Passwords don't match")
+            self.show_error("Passwords don't match.")
 
     def show_error(self, text):
         self.error_variable.set(text)

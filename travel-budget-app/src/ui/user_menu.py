@@ -24,7 +24,7 @@ class UserMenu:
         self._window = ttk.Frame(master=self._root)
 
         user_label = ttk.Label(master=self._window,
-                               text=f"Hello {self.username}!")
+                               text=f"Hello {self.username}!", font=('consolas', 13, "bold"))
         user_label.grid(padx=5, pady=5)
 
         my_trips_button = ttk.Button(
