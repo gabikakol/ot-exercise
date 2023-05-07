@@ -56,16 +56,5 @@ class TripRepository:
             return Trip(row["trip_id"], row["trip_name"], row["username"], row["duration"])
         return None
 
-    """
-    def delete(self):
-        
-        #Deletes all trips from the 'trips' database.
-        
-
-        cursor = self.connection.cursor()
-        cursor.execute("delete from trips")
-        self.connection.commit()
-    """
-
 
 trip_repository = TripRepository(get_database_connection())

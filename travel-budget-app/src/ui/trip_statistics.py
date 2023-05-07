@@ -76,7 +76,7 @@ class TripStats:
         for exp in all_expenses:
             if exp.trip_id == self.trip_id:
                 trip_expenses.append(exp)
-        
+
         return trip_expenses
 
     def display_stats(self):

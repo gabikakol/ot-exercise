@@ -57,16 +57,4 @@ class UserRepository:
         return [User(row["username"], row["password"]) for row in rows]
 
 
-"""
-    def delete(self):
-        
-        #Deletes all users from the 'users' database.
-        
-
-        cursor = self.connection.cursor()
-        cursor.execute("delete from users")
-        self.connection.commit()
-"""
-
-
 user_repository = UserRepository(get_database_connection())

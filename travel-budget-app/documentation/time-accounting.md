@@ -18,7 +18,7 @@
 |6      | 26.04.2023  | 4         |error handling|
 |6      | 02.05.2023  | 4         |UI improvements: user statistics; docstring|
 |7      | 05.05.2023  | 3         |tests|
-|7      | 07.05.2023  | 4         |tests, documentation|
+|7      | 07.05.2023  | 5         |tests, UI, documentation|
 |7      | 08.05.2023  | 4         |documentation|
 
 Total: 

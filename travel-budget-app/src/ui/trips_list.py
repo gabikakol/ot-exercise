@@ -57,16 +57,15 @@ class TripsList:
         self._window.destroy()
 
     def init_trip(self, trip, row, style):
-        
+
         trip_name_label = ttk.Label(
             master=self._window, text=trip.trip_name, font=('consolas', 10))
-        trip_name_label.grid(row=row,column=0,padx=5, pady=5)
+        trip_name_label.grid(row=row, column=0, padx=5, pady=5)
 
         show_more_button = ttk.Button(
             master=self._window, text="show more", command=lambda: self.show_more_handle(trip), style='show.TButton')
-        show_more_button.grid(row=row,column=1,padx=5, pady=5)
+        show_more_button.grid(row=row, column=1, padx=5, pady=5)
         style.configure('show.TButton', font=('consolas', 10))
-        
 
     def show_more_handle(self, trip):
         trip_service.trip_login(trip.trip_id, trip.trip_name)
