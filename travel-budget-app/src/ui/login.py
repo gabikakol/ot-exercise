@@ -51,7 +51,7 @@ class Login:
         style.configure("login.TButton", font=('consolas', 10))
 
         create_user_button = ttk.Button(
-            master=self._window, text="Create user", command=self.create_user, style="create.TButton")
+            master=self._window, text="Create a new user", command=self.create_user, style="create.TButton")
         create_user_button.grid(padx=5, pady=5)
         style.configure("create.TButton", font=('consolas', 10))
 

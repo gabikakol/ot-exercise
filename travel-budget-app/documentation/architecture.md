@@ -1,7 +1,7 @@
 # Architectural description
 
 ## Structure
-<img src="structure-subfolders.png"> 
+<img src="pictures/structure-subfolders.png"> 
 
 ## User interface
 User interface contains the following views:
