@@ -21,9 +21,10 @@ class TripStats:
 
     def start(self):
         self._window = ttk.Frame(master=self._root)
+        style = ttk.Style()
 
         stats_label = ttk.Label(
-            master=self._window, text=f"Statistics of the {self.trip_name} trip", font=('consolas', 13, "bold"))
+            master=self._window, text=f"Statistics of the {self.trip_name} trip", font=('consolas', 15, "bold"))
         stats_label.grid(padx=5, pady=5)
 
         if len(self.expenses) > 0:
@@ -34,8 +35,9 @@ class TripStats:
             no_data_label.grid(padx=5, pady=5)
 
         back_button = ttk.Button(
-            master=self._window, text="Back", command=self.trip_view_handle)
+            master=self._window, text="Back", command=self.trip_view_handle, style='back.TButton')
         back_button.grid(padx=5, pady=5)
+        style.configure('back.TButton', font=('consolas', 10))
 
     def pack(self):
         """displays the current view"""
@@ -74,7 +76,7 @@ class TripStats:
         for exp in all_expenses:
             if exp.trip_id == self.trip_id:
                 trip_expenses.append(exp)
-        print(trip_expenses)
+        
         return trip_expenses
 
     def display_stats(self):

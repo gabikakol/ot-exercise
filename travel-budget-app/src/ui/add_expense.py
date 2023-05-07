@@ -24,9 +24,10 @@ class AddExpense:
     def start(self):
 
         self._window = ttk.Frame(master=self._root)
+        style = ttk.Style()
 
         header_label = ttk.Label(
-            master=self._window, text="ADD AN EXPENSE", font=('consolas', 13, "bold"))
+            master=self._window, text="ADD AN EXPENSE", font=('consolas', 15, "bold"))
         header_label.grid(padx=5, pady=5)
 
         description_label = ttk.Label(
@@ -50,8 +51,9 @@ class AddExpense:
         categories = ['select an option', 'groceries', 'restaurants', 'cafes', 'bars', 'laundry',
                       'transportation', 'accommodation', 'tickets', 'currency exchange commissions', 'activities', 'other']
         self.cat_var = StringVar(self._root)
-        category_menu = ttk.OptionMenu(self._window, self.cat_var, *categories)
+        category_menu = ttk.OptionMenu(self._window, self.cat_var, *categories, style = "cat.TButton")
         category_menu.grid(padx=5, pady=5)
+        style.configure("cat.TButton", font=('consolas', 10))
 
         self.error_variable = StringVar(self._window)
         self.error_label = ttk.Label(
@@ -59,12 +61,14 @@ class AddExpense:
         self.error_label.grid(padx=5, pady=5)
 
         save_button = ttk.Button(
-            master=self._window, text="Save", command=self.handle_add_expense)
+            master=self._window, text="Save", command=self.handle_add_expense, style = "create.TButton")
         save_button.grid(padx=5, pady=5)
+        style.configure("create.TButton", font=('consolas', 10))
 
         cancel_button = ttk.Button(
-            master=self._window, text="Cancel", command=self.trip_view_handle)
+            master=self._window, text="Cancel", command=self.trip_view_handle, style = "cancel.TButton")
         cancel_button.grid(padx=5, pady=5)
+        style.configure("cancel.TButton", font=('consolas', 10))
 
         self.hide_error()
 

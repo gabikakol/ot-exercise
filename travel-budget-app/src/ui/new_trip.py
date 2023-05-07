@@ -22,9 +22,10 @@ class NewTrip:
 
     def start(self):
         self._window = ttk.Frame(master=self._root)
+        style = ttk.Style()
 
         header_label = ttk.Label(
-            master=self._window, text="CREATE A NEW TRIP", font=('consolas', 13, "bold"))
+            master=self._window, text="CREATE A NEW TRIP", font=('consolas', 15, "bold"))
         header_label.grid(padx=5, pady=5)
 
         name_label = ttk.Label(master=self._window,
@@ -45,12 +46,14 @@ class NewTrip:
         self.error_label.grid(padx=5, pady=5)
 
         save_button = ttk.Button(
-            master=self._window, text="Save", command=self.handle_new_trip)
+            master=self._window, text="Save", command=self.handle_new_trip, style="save.TButton")
         save_button.grid(padx=5, pady=5)
+        style.configure("save.TButton", font=('consolas', 10))
 
         cancel_button = ttk.Button(
-            master=self._window, text="Cancel", command=self.trips_list_handle)
+            master=self._window, text="Cancel", command=self.trips_list_handle, style="cancel.TButton")
         cancel_button.grid(padx=5, pady=5)
+        style.configure("cancel.TButton", font=('consolas', 10))
 
         self.hide_error()
 

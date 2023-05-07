@@ -22,9 +22,10 @@ class Login:
 
     def start(self):
         self._window = ttk.Frame(master=self._root)
+        style = ttk.Style()
 
         heading_label = ttk.Label(
-            master=self._window, text="LOGIN", font=('consolas', 13, "bold"))
+            master=self._window, text="LOGIN", font=('consolas', 15, "bold"))
         heading_label.grid(padx=5, pady=5)
 
         username_label = ttk.Label(
@@ -45,12 +46,14 @@ class Login:
         self.error_label.grid(padx=5, pady=5)
 
         login_button = ttk.Button(
-            master=self._window, text="Login", command=self.handle_login)
+            master=self._window, text="Login", command=self.handle_login, style="login.TButton")
         login_button.grid(padx=5, pady=5)
+        style.configure("login.TButton", font=('consolas', 10))
 
         create_user_button = ttk.Button(
-            master=self._window, text="Create user", command=self.create_user)
+            master=self._window, text="Create user", command=self.create_user, style="create.TButton")
         create_user_button.grid(padx=5, pady=5)
+        style.configure("create.TButton", font=('consolas', 10))
 
         self.hide_error()
 

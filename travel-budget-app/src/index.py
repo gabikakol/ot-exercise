@@ -5,7 +5,7 @@ from ui.ui import UI
 def main():
     window = Tk()
     window.title("Travel budget app")
-    window.geometry("700x700")
+    window.geometry("700x500")
 
     UI(window)
     window.mainloop()

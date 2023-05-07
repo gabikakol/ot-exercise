@@ -24,9 +24,10 @@ class CreateUser:
     def start(self):
 
         self._window = ttk.Frame(master=self._root)
+        style = ttk.Style()
 
         heading_label = ttk.Label(
-            master=self._window, text="CREATE A NEW USER", font=('consolas', 13, "bold"))
+            master=self._window, text="CREATE A NEW USER", font=('consolas', 15, "bold"))
         heading_label.grid(padx=5, pady=5)
 
         username_label = ttk.Label(
@@ -48,8 +49,9 @@ class CreateUser:
         self._password_entry2.grid(padx=5, pady=5)
 
         save_button = ttk.Button(
-            master=self._window, text="Save and log in", command=self.handle_create_user)
+            master=self._window, text="Save and log in", command=self.handle_create_user, style="create.TButton")
         save_button.grid(padx=5, pady=5)
+        style.configure("create.TButton", font=('consolas', 10))
 
         self.error_variable = StringVar(self._window)
         self.error_label = ttk.Label(
@@ -57,8 +59,9 @@ class CreateUser:
         self.error_label.grid(padx=5, pady=5)
 
         cancel_button = ttk.Button(
-            master=self._window, text="Cancel", command=self.login_view)
+            master=self._window, text="Cancel", command=self.login_view, style="cancel.TButton")
         cancel_button.grid(padx=5, pady=5)
+        style.configure("cancel.TButton", font=('consolas', 10))
 
         self.hide_error()
 

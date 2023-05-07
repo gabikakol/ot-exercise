@@ -21,9 +21,10 @@ class UserStats:
 
     def start(self):
         self._window = ttk.Frame(master=self._root)
+        style = ttk.Style()
 
         stats_label = ttk.Label(master=self._window,
-                                text=f"Statistics for {self.username}", font=('consolas', 13, "bold"))
+                                text=f"Statistics for {self.username}", font=('consolas', 15, "bold"))
         stats_label.grid(padx=5, pady=5)
 
         counters = self.user_trips_counters()
@@ -41,11 +42,10 @@ class UserStats:
                                       text=f"No data available. Add a trip with expenses to see statistics.", font=('consolas', 10, "italic"))
             no_data_label.grid(padx=5, pady=5)
 
-        back_button = ttk.Button(master=self._window, text="Back to menu")
-
         back_button = ttk.Button(
-            master=self._window, text="Back", command=self.user_menu_handle)
+            master=self._window, text="Back", command=self.user_menu_handle, style='back.TButton')
         back_button.grid(padx=5, pady=5)
+        style.configure('back.TButton', font=('consolas', 10))
 
     def pack(self):
         """displays the current view"""

@@ -22,28 +22,31 @@ class UserMenu:
     def start(self):
 
         self._window = ttk.Frame(master=self._root)
+        style = ttk.Style()
 
         user_label = ttk.Label(master=self._window,
-                               text=f"Hello {self.username}!", font=('consolas', 13, "bold"))
+                               text=f"Hello {self.username}!", font=('consolas', 15, "bold"))
         user_label.grid(padx=5, pady=5)
 
         my_trips_button = ttk.Button(
-            master=self._window, text="My trips", command=self.my_trips_handle)
+            master=self._window, text="My trips", command=self.my_trips_handle, style="my.TButton")
         my_trips_button.grid(padx=5, pady=5)
+        style.configure('my.TButton', font=('consolas', 10))
 
         new_trip_button = ttk.Button(
-            master=self._window, text="Create new trip", command=self.new_trip_handle)
+            master=self._window, text="Create new trip", command=self.new_trip_handle, style="new.TButton")
         new_trip_button.grid(padx=5, pady=5)
+        style.configure('new.TButton', font=('consolas', 10))
 
         stats_button = ttk.Button(
-            master=self._window, text="User statistics", command=self.user_stats_handle)
+            master=self._window, text="User statistics", command=self.user_stats_handle, style="stats.TButton")
         stats_button.grid(padx=5, pady=5)
+        style.configure('stats.TButton', font=('consolas', 10))
 
         logout_button = ttk.Button(
-            master=self._window, text="Log out", command=self.logout_handle)
+            master=self._window, text="Log out", command=self.logout_handle, style='logout.TButton')
         logout_button.grid(padx=5, pady=5)
-
-        self._window.grid_columnconfigure(0, weight=1, minsize=400)
+        style.configure('logout.TButton', font=('consolas', 10))
 
     def pack(self):
         """displays the current view"""

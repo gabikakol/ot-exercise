@@ -22,8 +22,10 @@ class TripView:
     def start(self):
 
         self._window = ttk.Frame(master=self._root)
+        style = ttk.Style()
+
         header_label = ttk.Label(
-            master=self._window, text=f"Expenses of the {self.trip_name} trip", font=('consolas', 13, "bold"))
+            master=self._window, text=f"Expenses of the {self.trip_name} trip", font=('consolas', 15, "bold"))
         header_label.grid(padx=5, pady=5)
 
         expenses = expense_repository.find_all_expenses()
@@ -38,16 +40,19 @@ class TripView:
             none_label.grid(padx=5, pady=5)
 
         add_button = ttk.Button(master=self._window,
-                                text="Add expense", command=self.add_expense)
+                                text="Add expense", command=self.add_expense, style="add.TButton")
         add_button.grid(padx=5, pady=5)
+        style.configure('add.TButton', font=('consolas', 10))
 
         stats_button = ttk.Button(
-            master=self._window, text="Trip statistics", command=self.trip_stats_handle)
+            master=self._window, text="Trip statistics", command=self.trip_stats_handle, style="stats.TButton")
         stats_button.grid(padx=5, pady=5)
+        style.configure('stats.TButton', font=('consolas', 10))
 
         back_button = ttk.Button(
-            master=self._window, text="Back to trips menu", command=self.trips_list_handle)
+            master=self._window, text="Back to trips menu", command=self.trips_list_handle, style='back.TButton')
         back_button.grid(padx=5, pady=5)
+        style.configure('back.TButton', font=('consolas', 10))
 
     def pack(self):
         """displays the current view"""
