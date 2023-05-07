@@ -43,3 +43,6 @@
 
 ## Week 6
 Further development in user statistics. *No trips yet* displayed under 'user's trips' if user did not add any trips yet, or *No expenses yet* displayed under 'trip's expenses' if user did not add any expenses to the particular trip yet. Errors (such as empty input or non-numerical value for input of travel days or cost of the expense) are now handled (file ```errors_handling.py``` in the folder ```errors```)
+
+## Week 7
+Small UI changes, such as window size, font. More testing, coverage 100%. Documentation done. Project finalized, ready for the final submission. 

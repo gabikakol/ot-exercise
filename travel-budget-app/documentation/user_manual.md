@@ -25,7 +25,7 @@ poetry run invoke start
 ## Login
 The program starts with the login window. Log in by entering your username and password, and pressing *Login* (both entries are case sensitive). If you do not have a user account yet, click *Create a new user*. 
 </br></br>
-<img src="pictures/login-view.png" width="600"> 
+<img src="pictures/login-view.png"> 
 
 ## Creating new user
 Creating new user is done by entering a unique username (all characters are allowed) and password. Password must be confirmed by retyping it in the *Repeat passowrd* field. If the creation is successful, user is logged and redirected to the main menu. 
