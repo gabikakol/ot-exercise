@@ -56,6 +56,7 @@ class UserRepository:
         rows = cursor.execute("select * from users;").fetchall()
         return [User(row["username"], row["password"]) for row in rows]
 
+
 """
     def delete(self):
         

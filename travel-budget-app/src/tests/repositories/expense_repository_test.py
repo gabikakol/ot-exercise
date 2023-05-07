@@ -3,12 +3,13 @@ from entities.expense import Expense
 from tests.testing_env.test_repository import test_expense_repository
 from tests.testing_env.test_init_database import init_expenses_database
 
+
 class TestExpenseRepository(unittest.TestCase):
     def setUp(self):
         init_expenses_database()
         self.expense1 = Expense("a1b2c3", "expense1", "123", "34.32", "other")
-        self.expense2 = Expense("421nme", "expense2", "748", "7.00", "groceries")
-
+        self.expense2 = Expense("421nme", "expense2",
+                                "748", "7.00", "groceries")
 
     def test_create_expense(self):
         test_expense_repository.create_expense(self.expense1)

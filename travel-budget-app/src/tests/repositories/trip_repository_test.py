@@ -3,6 +3,7 @@ from entities.trip import Trip
 from tests.testing_env.test_repository import test_trip_repository
 from tests.testing_env.test_init_database import init_trips_database
 
+
 class TestTripRepository(unittest.TestCase):
     def setUp(self):
         init_trips_database()

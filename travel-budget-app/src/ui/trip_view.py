@@ -23,7 +23,7 @@ class TripView:
 
         self._window = ttk.Frame(master=self._root)
         header_label = ttk.Label(
-            master=self._window, text=f"Expenses of the {self.trip_name} trip",font=('consolas', 13, "bold"))
+            master=self._window, text=f"Expenses of the {self.trip_name} trip", font=('consolas', 13, "bold"))
         header_label.grid(padx=5, pady=5)
 
         expenses = expense_repository.find_all_expenses()
@@ -33,7 +33,8 @@ class TripView:
                 self.init_expense(exp)
                 empty = False
         if empty:
-            none_label = ttk.Label(master=self._window, text="No expenses yet", font=('consolas', 10, "italic"))
+            none_label = ttk.Label(
+                master=self._window, text="No expenses yet", font=('consolas', 10, "italic"))
             none_label.grid(padx=5, pady=5)
 
         add_button = ttk.Button(master=self._window,

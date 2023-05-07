@@ -26,6 +26,58 @@ class TripStats:
             master=self._window, text=f"Statistics of the {self.trip_name} trip", font=('consolas', 13, "bold"))
         stats_label.grid(padx=5, pady=5)
 
+        if len(self.expenses) > 0:
+            self.display_stats()
+        else:
+            no_data_label = ttk.Label(master=self._window,
+                                      text=f"No data available. Add an expense to see statistics.", font=('consolas', 10, "italic"))
+            no_data_label.grid(padx=5, pady=5)
+
+        back_button = ttk.Button(
+            master=self._window, text="Back", command=self.trip_view_handle)
+        back_button.grid(padx=5, pady=5)
+
+    def pack(self):
+        """displays the current view"""
+        self._window.pack()
+
+    def destroy(self):
+        """resets the current view"""
+        self._window.destroy()
+
+    def spent_total(self):
+        sum = 0
+        for exp in self.expenses:
+            sum += float(exp.amount)
+        return sum
+
+    def stats_sorting(self):
+        dic = {}
+
+        for exp in self.expenses:
+            if exp.category in dic:
+                dic[exp.category] += float(exp.amount)
+            else:
+                dic[exp.category] = float(exp.amount)
+
+        cheapest_cat = min(dic.items(), key=lambda item: item[1])
+        expensive_cat = max(dic.items(), key=lambda item: item[1])
+
+        cheapest_exp = min(self.expenses, key=lambda exp: exp.amount)
+        expensive_exp = max(self.expenses, key=lambda exp: exp.amount)
+
+        return [cheapest_cat, expensive_cat, (cheapest_exp.description, float(cheapest_exp.amount)), (expensive_exp.description, float(expensive_exp.amount))]
+
+    def find_trip_expenses(self):
+        all_expenses = expense_repository.find_all_expenses()
+        trip_expenses = []
+        for exp in all_expenses:
+            if exp.trip_id == self.trip_id:
+                trip_expenses.append(exp)
+        print(trip_expenses)
+        return trip_expenses
+
+    def display_stats(self):
         sum = self.spent_total()
 
         spent_total_label = ttk.Label(
@@ -66,48 +118,3 @@ class TripStats:
         expensive_label = ttk.Label(
             master=self._window, text=f"The most expensive item: {stats[3][0]} (€{(stats[3][1]):.2f})", font=('consolas', 10))
         expensive_label.grid(padx=5, pady=5)
-
-        back_button = ttk.Button(
-            master=self._window, text="Back", command=self.trip_view_handle)
-        back_button.grid(padx=5, pady=5)
-
-        self.stats_sorting()
-
-    def pack(self):
-        """displays the current view"""
-        self._window.pack()
-
-    def destroy(self):
-        """resets the current view"""
-        self._window.destroy()
-
-    def spent_total(self):
-        sum = 0
-        for exp in self.expenses:
-            sum += float(exp.amount)
-        return sum        
-
-    def stats_sorting(self):
-        dic = {}
-
-        for exp in self.expenses:
-            if exp.category in dic:
-                dic[exp.category] += float(exp.amount)
-            else:
-                dic[exp.category] = float(exp.amount)
-        
-        cheapest_cat = min(dic.items(), key=lambda item: item[1])
-        expensive_cat = max(dic.items(), key=lambda item: item[1])
-
-        cheapest_exp = min(self.expenses, key = lambda exp: exp.amount)
-        expensive_exp = max(self.expenses, key = lambda exp: exp.amount)
-
-        return [cheapest_cat, expensive_cat, (cheapest_exp.description, float(cheapest_exp.amount)), (expensive_exp.description, float(expensive_exp.amount))]
-
-    def find_trip_expenses(self):
-        all_expenses = expense_repository.find_all_expenses()
-        trip_expenses = []
-        for exp in all_expenses:
-            if exp.trip_id == self.trip_id:
-                trip_expenses.append(exp)
-        return trip_expenses

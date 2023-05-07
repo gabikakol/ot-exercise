@@ -60,6 +60,7 @@ class ExpenseRepository:
                            row["trip_id"], row["amount"], row["category"])
         return None
 
+
 """
     def delete(self):
         

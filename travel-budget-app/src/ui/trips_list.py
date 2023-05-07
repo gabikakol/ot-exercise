@@ -33,7 +33,8 @@ class TripsList:
                 self.init_trip(trip)
                 empty = False
         if empty:
-            none_label = ttk.Label(master=self._window, text="No trips yet", font=('consolas', 10, "italic"))
+            none_label = ttk.Label(
+                master=self._window, text="No trips yet", font=('consolas', 10, "italic"))
             none_label.grid(padx=5, pady=5)
 
         new_trip_button = ttk.Button(
@@ -53,7 +54,8 @@ class TripsList:
         self._window.destroy()
 
     def init_trip(self, trip):
-        trip_name_label = ttk.Label(master=self._window, text=trip.trip_name, font=('consolas', 10, "bold"))
+        trip_name_label = ttk.Label(
+            master=self._window, text=trip.trip_name, font=('consolas', 10, "bold"))
         trip_name_label.grid(padx=5, pady=5)
 
         show_more_button = ttk.Button(

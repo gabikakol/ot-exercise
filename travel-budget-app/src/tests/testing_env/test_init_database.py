@@ -1,5 +1,6 @@
 from tests.testing_env.test_database_connection import get_database_connection
 
+
 def drop_users_tables(connection):
     """
     Deletes 'users' tables. 
@@ -127,6 +128,7 @@ def init_expenses_database():
     connection = get_database_connection()
     drop_expenses_tables(connection)
     create_expenses_tables(connection)
+
 
 if __name__ == "__main__":
     init_users_database()

@@ -3,6 +3,7 @@ from entities.user import User
 from tests.testing_env.test_repository import test_user_repository
 from tests.testing_env.test_init_database import init_users_database
 
+
 class TestTripRepository(unittest.TestCase):
     def setUp(self):
         init_users_database()

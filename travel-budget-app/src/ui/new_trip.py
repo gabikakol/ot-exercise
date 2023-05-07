@@ -23,15 +23,18 @@ class NewTrip:
     def start(self):
         self._window = ttk.Frame(master=self._root)
 
-        header_label = ttk.Label(master=self._window, text="CREATE A NEW TRIP", font=('consolas', 13, "bold"))
+        header_label = ttk.Label(
+            master=self._window, text="CREATE A NEW TRIP", font=('consolas', 13, "bold"))
         header_label.grid(padx=5, pady=5)
 
-        name_label = ttk.Label(master=self._window, text="Name:", font=('consolas', 10, "bold"))
+        name_label = ttk.Label(master=self._window,
+                               text="Name:", font=('consolas', 10, "bold"))
         name_label.grid(padx=5, pady=5)
         self.name_entry = ttk.Entry(master=self._window)
         self.name_entry.grid(padx=5, pady=5)
 
-        duration_label = ttk.Label(master=self._window, text="Duration (days):", font=('consolas', 10, "bold"))
+        duration_label = ttk.Label(
+            master=self._window, text="Duration (days):", font=('consolas', 10, "bold"))
         duration_label.grid(padx=5, pady=5)
         self.duration_entry = ttk.Entry(master=self._window)
         self.duration_entry.grid(padx=5, pady=5)

@@ -25,22 +25,26 @@ class AddExpense:
 
         self._window = ttk.Frame(master=self._root)
 
-        header_label = ttk.Label(master=self._window, text="ADD AN EXPENSE", font=('consolas', 13, "bold"))
+        header_label = ttk.Label(
+            master=self._window, text="ADD AN EXPENSE", font=('consolas', 13, "bold"))
         header_label.grid(padx=5, pady=5)
 
-        description_label = ttk.Label(master=self._window, text="Description:", font=('consolas', 10, "bold"))
+        description_label = ttk.Label(
+            master=self._window, text="Description:", font=('consolas', 10, "bold"))
         description_label.grid(padx=5, pady=5)
 
         self.description_entry = ttk.Entry(master=self._window)
         self.description_entry.grid(padx=5, pady=5)
 
-        amount_label = ttk.Label(master=self._window, text="Cost (EUR):", font=('consolas', 10, "bold"))
+        amount_label = ttk.Label(
+            master=self._window, text="Cost (EUR):", font=('consolas', 10, "bold"))
         amount_label.grid(padx=5, pady=5)
 
         self.amount_entry = ttk.Entry(master=self._window)
         self.amount_entry.grid(padx=5, pady=5)
 
-        category_label = ttk.Label(master=self._window, text="Category:", font=('consolas', 10, "bold"))
+        category_label = ttk.Label(
+            master=self._window, text="Category:", font=('consolas', 10, "bold"))
         category_label.grid(padx=5, pady=5)
 
         categories = ['select an option', 'groceries', 'restaurants', 'cafes', 'bars', 'laundry',
