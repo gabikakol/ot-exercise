@@ -20,6 +20,9 @@ class TestTripRepository(unittest.TestCase):
         self.assertEqual(all_trips[0].duration, "4")
 
     def test_find_trip(self):
+        trip = test_trip_repository.find_trip("123")
+        self.assertEqual(trip, None)
+
         test_trip_repository.create_trip(self.trip1)
         trip = test_trip_repository.find_trip("123")
 

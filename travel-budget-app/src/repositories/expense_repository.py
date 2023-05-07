@@ -60,14 +60,15 @@ class ExpenseRepository:
                            row["trip_id"], row["amount"], row["category"])
         return None
 
+"""
     def delete(self):
-        """
-        Deletes all expenses from the 'expenses' database.
-        """
+        
+        #Deletes all expenses from the 'expenses' database.
+        
 
         cursor = self.connection.cursor()
         cursor.execute("delete from expenses")
         self.connection.commit()
-
+"""
 
 expense_repository = ExpenseRepository(get_database_connection())
