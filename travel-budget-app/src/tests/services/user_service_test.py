@@ -1,5 +1,4 @@
 import unittest
-from entities.user import User
 from services.user_service import UserService
 from errors.errors_handling import InvalidCridentialsError, UserExistsError, PasswordsDontMatchError, EmptyInputError
 from tests.testing_env.test_repository import test_user_repository
