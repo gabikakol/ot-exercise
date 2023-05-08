@@ -7,6 +7,6 @@ def build():
     init_expenses_database()
 
 
-# Allows to call the function using command line, hence using "poetry run invoke build"
+# Allows to call the function using command line
 if __name__ == "__main__":
     build()

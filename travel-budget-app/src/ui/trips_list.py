@@ -5,10 +5,18 @@ from services.trip_service import trip_service
 
 
 class TripsList:
-    """Class for user's trips ui"""
+    """Class for user's trips ui."""
 
     def __init__(self, root, user_menu, new_trip, trip_view):
-        """class constructor"""
+        """
+        Class constructor.
+
+        Args:
+            root: tkinter root
+            user_menu: user menu window
+            new_trip: adding new trip window
+            trip_view: trip's details (expenses) view window
+        """
 
         self._root = root
         self._window = None
@@ -49,11 +57,11 @@ class TripsList:
         style.configure('back.TButton', font=('consolas', 10))
 
     def pack(self):
-        """displays the current view"""
+        """Displays the current view."""
         self._window.pack()
 
     def destroy(self):
-        """resets the current view"""
+        """Resets the current view."""
         self._window.destroy()
 
     def init_trip(self, trip, row, style):

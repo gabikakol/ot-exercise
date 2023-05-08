@@ -5,10 +5,16 @@ from repositories.trip_repository import trip_repository
 
 
 class TripStats:
-    """Class for trip's statistics ui"""
+    """Class for trip's statistics ui."""
 
     def __init__(self, root, trip_view):
-        """class contructor"""
+        """
+        Class contructor.
+
+        Args:
+            root: tkinter root
+            trip_view: trip's details (expenses) view window
+        """
 
         self._root = root
         self.trip_view_handle = trip_view
@@ -40,11 +46,11 @@ class TripStats:
         style.configure('back.TButton', font=('consolas', 10))
 
     def pack(self):
-        """displays the current view"""
+        """Displays the current view."""
         self._window.pack()
 
     def destroy(self):
-        """resets the current view"""
+        """Resets the current view."""
         self._window.destroy()
 
     def spent_total(self):
@@ -97,12 +103,12 @@ class TripStats:
 
         stats = self.stats_sorting()
         """
-        stats is a list with following:
+        Stats is a list with following:
         - the cheapest category at index 0
         - the most expensive category at index 1
         - the cheapest expense at index 2
         - the most expensive expense at index 3
-        at each index: a tuple with category name at index 0 and cost (as a float number) at index 1
+        At each index: a tuple with category name at index 0 and cost (as a float number) at index 1.
         """
 
         cheapest_category_label = ttk.Label(

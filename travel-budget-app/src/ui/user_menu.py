@@ -3,10 +3,19 @@ from services.user_service import user_service
 
 
 class UserMenu:
-    """Class for user's main menu ui"""
+    """Class for user's main menu ui."""
 
     def __init__(self, root, logout_view, trips_list, new_trip, user_stats):
-        """class constructor"""
+        """
+        Class constructor.
+
+        Args:
+            root: tkinter root
+            logout_view: login window
+            trips_list: trips list view window
+            new_trip: creating new trip window
+            user_stats: user's statistics window
+        """
 
         self._root = root
         self.logout_handle = logout_view
@@ -49,9 +58,9 @@ class UserMenu:
         style.configure('logout.TButton', font=('consolas', 10))
 
     def pack(self):
-        """displays the current view"""
+        """Displays the current view."""
         self._window.pack()
 
     def destroy(self):
-        """resets the current view"""
+        """Resets the current view."""
         self._window.destroy()

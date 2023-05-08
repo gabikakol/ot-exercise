@@ -4,10 +4,17 @@ from errors.errors_handling import InvalidCridentialsError
 
 
 class Login:
-    """Class for login ui"""
+    """Class for login ui."""
 
     def __init__(self, root, user_menu, create_user_view):
-        """class contructor"""
+        """
+        Class contructor.
+
+        Args:
+            root: tkinter root
+            user_menu: user menu window
+            create_user_view: create user window
+        """
 
         self._root = root
         self.user_menu_handle = user_menu
@@ -75,9 +82,9 @@ class Login:
         self.error_label.grid_remove()
 
     def destroy(self):
-        """displays the current view"""
+        """Displays the current view."""
         self._window.destroy()
 
     def pack(self):
-        """resets the current view"""
+        """Resets the current view."""
         self._window.pack()

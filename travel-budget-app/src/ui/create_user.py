@@ -7,7 +7,14 @@ class CreateUser:
     """Class for creating a new user ui"""
 
     def __init__(self, root, user_menu, login_view):
-        """class constructor"""
+        """
+        Class constructor.
+
+        Args:
+            root: tkinter root
+            user_menu: user menu window
+            login_view: login window
+        """
 
         self._root = root
         self.user_menu = user_menu
@@ -90,9 +97,9 @@ class CreateUser:
         self.error_label.grid_remove()
 
     def destroy(self):
-        """resets the current view"""
+        """Resets the current view."""
         self._window.destroy()
 
     def pack(self):
-        """displays the current view"""
+        """Displays the current view."""
         self._window.pack()

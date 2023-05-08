@@ -6,7 +6,12 @@ class UserRepository:
     """Class responsible for database operations related to users"""
 
     def __init__(self, connection):
-        """class constructor"""
+        """
+        Class constructor.
+
+        Args:
+            connection: database connection object
+        """
 
         self.connection = connection
 

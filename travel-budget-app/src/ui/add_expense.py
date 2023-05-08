@@ -5,10 +5,16 @@ from errors.errors_handling import EmptyInputError, NotFloatError, CatNotSelecte
 
 
 class AddExpense:
-    """Class for adding new expense ui"""
+    """Class for adding new expense ui."""
 
     def __init__(self, root, trip_view):
-        """class constructor"""
+        """
+        Class constructor.
+
+        Args:
+            root: tkinter root
+            trip_view: trip's details (expenses) view window
+        """
 
         self._root = root
         self._window = None
@@ -74,11 +80,11 @@ class AddExpense:
         self.hide_error()
 
     def pack(self):
-        """displays the current view"""
+        """Displays the current view."""
         self._window.pack()
 
     def destroy(self):
-        """resets the current view"""
+        """Resets the current view."""
         self._window.destroy()
 
     def handle_add_expense(self):

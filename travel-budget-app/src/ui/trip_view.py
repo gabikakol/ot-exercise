@@ -4,10 +4,18 @@ from repositories.expense_repository import expense_repository
 
 
 class TripView:
-    """Class for trip's data ui"""
+    """Class for trip's data ui."""
 
     def __init__(self, root, trips_list, add_expense, trip_stats):
-        """class constructor"""
+        """
+        Class constructor.
+
+        Args:
+            root: tkinter root
+            trips_list: trips list view window
+            add_expense: add expense window
+            trip_stats: trip statistics window
+        """
 
         self._root = root
         self.trips_list_handle = trips_list
@@ -55,11 +63,11 @@ class TripView:
         style.configure('back.TButton', font=('consolas', 10))
 
     def pack(self):
-        """displays the current view"""
+        """Displays the current view."""
         self._window.pack()
 
     def destroy(self):
-        """resets the current view"""
+        """Resets the current view."""
         self._window.destroy()
 
     def init_expense(self, exp):

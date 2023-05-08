@@ -27,7 +27,7 @@ class UI:
 
     def hide_current_window(self):
         """
-        resets the current view
+        Resets the current view (if it exists).
         """
         if self.window:
             self.window.destroy()
@@ -35,7 +35,7 @@ class UI:
 
     def login_view(self):
         """"
-        initializes the login ui window
+        Initializes the login ui window.
         """
 
         self.hide_current_window()
@@ -44,7 +44,7 @@ class UI:
 
     def create_user_view(self):
         """"
-        initializes the ui window for creating new user
+        Initializes the ui window for creating new user.
         """
 
         self.hide_current_window()
@@ -53,7 +53,7 @@ class UI:
 
     def user_menu(self):
         """
-        initializes the ui window for the main user menu
+        Initializes the ui window for the main user menu.
         """
 
         self.hide_current_window()
@@ -63,7 +63,7 @@ class UI:
 
     def trips_list(self):
         """
-        initializes the ui window for viewing the user's trips
+        Initializes the ui window for viewing the user's trips.
         """
 
         self.hide_current_window()
@@ -73,7 +73,7 @@ class UI:
 
     def new_trip(self):
         """
-        initializes the ui window for creating new trip
+        Initializes the ui window for creating new trip.
         """
 
         self.hide_current_window()
@@ -82,7 +82,7 @@ class UI:
 
     def trip_view(self):
         """
-        initializes the ui window for viewing trip's expenses
+        Initializes the ui window for viewing trip's expenses.
         """
 
         self.hide_current_window()
@@ -92,7 +92,7 @@ class UI:
 
     def add_expense(self):
         """
-        initializes the ui window for adding new expense
+        Initializes the ui window for adding new expense.
         """
 
         self.hide_current_window()
@@ -101,7 +101,7 @@ class UI:
 
     def trip_stats(self):
         """
-        initializes the ui window for viewing trip's statistics
+        Initializes the ui window for viewing trip's statistics.
         """
 
         self.hide_current_window()
@@ -110,7 +110,7 @@ class UI:
 
     def user_stats(self):
         """
-        initializes the ui window for viewing user's statistics
+        Initializes the ui window for viewing user's statistics.
         """
 
         self.hide_current_window()

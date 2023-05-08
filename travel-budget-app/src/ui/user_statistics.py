@@ -5,10 +5,16 @@ from repositories.expense_repository import expense_repository
 
 
 class UserStats:
-    """Class for user's statistics ui"""
+    """Class for user's statistics ui."""
 
     def __init__(self, root, user_menu):
-        """class constructor"""
+        """
+        Class constructor.
+
+        Args:
+            root: tkinter root
+            user_menu: user menu window
+        """
 
         self._root = root
         self._window = None
@@ -29,7 +35,7 @@ class UserStats:
 
         counters = self.user_trips_counters()
         """
-        counters is a list with following:
+        Counters is a list with following:
         - total number of trips at index 0 
         - total number of travel days at index 1
         - total amount (EUR) spent during all trips at index 2
@@ -48,11 +54,11 @@ class UserStats:
         style.configure('back.TButton', font=('consolas', 10))
 
     def pack(self):
-        """displays the current view"""
+        """Displays the current view."""
         self._window.pack()
 
     def destroy(self):
-        """resets the current view"""
+        """Resets the current view."""
         self._window.destroy()
 
     def user_trips_counters(self):

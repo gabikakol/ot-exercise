@@ -8,6 +8,7 @@ The application has been tested with automated unit and integration tests using 
 ### Repository classes
 
 ### Testing coverage
+<img src="pictures/coverage-report.jpg"> 
 
 ## System testing
 

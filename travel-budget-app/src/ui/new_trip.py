@@ -5,10 +5,16 @@ from errors.errors_handling import EmptyInputError, NotIntegerError
 
 
 class NewTrip:
-    """Class for creating a new trip ui"""
+    """Class for creating a new trip ui."""
 
     def __init__(self, root, trips_list):
-        """class contructor"""
+        """
+        Class contructor.
+
+        Args:
+            root: tkinter root
+            trips_list: trips list view window
+        """
 
         self._root = root
         self.trips_list_handle = trips_list
@@ -58,11 +64,11 @@ class NewTrip:
         self.hide_error()
 
     def pack(self):
-        """diplays the current view"""
+        """Diplays the current view."""
         self._window.pack()
 
     def destroy(self):
-        """resets the current view"""
+        """Resets the current view."""
         self._window.destroy()
 
     def handle_new_trip(self):
