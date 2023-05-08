@@ -43,7 +43,8 @@ class TripService:
 
     def trip_login(self, trip_id, name):
         """
-        Saves the trip id and name of the currently accessed trip so they can be accessed using functions get_trip_id() and get_trip_name().
+        Saves the trip id and name of the currently accessed trip,
+        such that they can be accessed using functions get_trip_id() and get_trip_name().
         """
 
         self.trip_id = trip_id
@@ -56,5 +57,6 @@ class TripService:
         return self.trip_name
 
 
-# This variable will be used by the application and services to avoid making multiple instances of TripService
+# This variable will be used by the application and services
+# to avoid making multiple instances of TripService
 trip_service = TripService()

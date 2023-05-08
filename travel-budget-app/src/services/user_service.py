@@ -77,5 +77,6 @@ class UserService:
         return self.user.username
 
 
-# This variable will be used by the application and services to avoid making multiple instances of UserService
+# This variable will be used by the application and services
+# to avoid making multiple instances of UserService
 user_service = UserService()

@@ -55,5 +55,6 @@ class ExpenseService:
             return False
 
 
-# This variable will be used by the application and services to avoid making multiple instances of ExpenseService
+# This variable will be used by the application and services
+# to avoid making multiple instances of ExpenseService
 expense_service = ExpenseService()
