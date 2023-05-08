@@ -16,7 +16,7 @@ The classes that require permanents storage [...] run on dummy databases, which 
 Repository classes `UserRepository`, `TripRepository`, and `ExpenseRepository` are also tested with the dummy files from */tests/testing_env* forlder. [...]
 
 ### Testing coverage
-Tests exclude the user interface layer. The branching coverage of the application testing in 100%. </br>
+Tests exclude the user interface layer. The branching coverage of the application testing in 100%. </br> </br>
 <img src="pictures/coverage-report.png"> 
 
 ## System testing
