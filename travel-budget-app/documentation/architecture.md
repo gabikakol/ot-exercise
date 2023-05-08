@@ -16,7 +16,6 @@ User interface contains the following views:
 - user's statistics
 
 ## Application logic
-coming soon :)
 
 ## Permanent storage of data
 

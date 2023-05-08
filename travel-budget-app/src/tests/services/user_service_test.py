@@ -2,39 +2,35 @@ import unittest
 from entities.user import User
 from services.user_service import UserService
 from errors.errors_handling import InvalidCridentialsError, UserExistsError, PasswordsDontMatchError, EmptyInputError
+from tests.testing_env.test_repository import test_user_repository
 
-"""
-class FakeUserRepo:
-    def __init__(self, users=None):
-        self.users = users or []
-
-    def create_user(self, user):
-        self.users.append(user)
-
-    def find_user(self, username):
-        for user in self.users:
-            if user.username == username:
-                return user
-        return None
-            
-    def find_all(self):
-        return self.users
-    
-    
 class TestUserService(unittest.TestCase):
-    def setUp(self): 
-        self.user_service = UserService(FakeUserRepo())
-        self.user1 = User("gabby", "123")
+    def setUp(self):
+        self.user_service = UserService(test_user_repository)
 
     def test_create_user(self):
-        pass
+        self.user_service.new_user("gabi", "123", "123")
+        self.assertEqual(self.user_service.user.username, "gabi")
+        self.assertEqual(self.user_service.user.password, "123")
+
+        self.assertRaises(UserExistsError, lambda: self.user_service.new_user("gabi", "123", "123"))
+        self.assertRaises(EmptyInputError, lambda: self.user_service.new_user("", "123", "123"))
+        self.assertRaises(EmptyInputError, lambda: self.user_service.new_user("gabi2", "", "123"))
+        self.assertRaises(PasswordsDontMatchError, lambda: self.user_service.new_user("gabi2", "123", "456"))
 
     def test_login(self):
-        pass
+        self.user_service.login("gabi", "123")
+        self.assertEqual(self.user_service.user.username, "gabi")
+        self.assertEqual(self.user_service.user.password, "123")
+
+        self.assertRaises(InvalidCridentialsError, lambda: self.user_service.login("gabi", "456"))
+        self.assertRaises(InvalidCridentialsError, lambda: self.user_service.login("gabi2", "123"))
 
     def test_logout(self):
-        pass
+        self.user_service.login("gabi", "123")
+        self.user_service.logout()
+        self.assertEqual(self.user_service.user, None)
 
     def test_get_username(self):
-        pass
-"""
+        self.user_service.login("gabi", "123")
+        self.assertEqual(self.user_service.get_username(), "gabi")
