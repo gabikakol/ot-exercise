@@ -21,7 +21,7 @@ class TripService:
             raise NotIntegerError("Trip duration input has to be an integer")
 
         self.trip_rep.create_trip(
-            Trip(None, username, trip_name, duration))
+            Trip(None, trip_name, username, duration))
 
     def trip_login(self, trip_id, name):
         self.trip_id = trip_id
