@@ -16,4 +16,4 @@ The application has been tested with automated unit and integration tests using 
 
 ### Functionalities
 
-## Problems left in the application
+## Issues left in the application
