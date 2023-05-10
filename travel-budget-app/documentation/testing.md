@@ -19,7 +19,7 @@ Tests exclude the user interface layer. The branching coverage of the applicatio
 System testing of the application has been performed manually. 
 
 ### Installation and configuration
-The application has been downloaded and tested as described in the [user manual](documentation/user-manual.md) for the Linux environment. 
+The application has been downloaded and tested as described in the [user manual](user-manual.md) for the Linux environment. 
 
 ### Functionalities
 
