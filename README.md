@@ -26,6 +26,7 @@ poetry run invoke build
 ```
 poetry run invoke start
 ```
+For further instructions, please read [user manual](travel-budget-app/documentation/user-manual.md).
 
 ## Command line functions
 The following commands must be ran in ```/software-dev-exercises/travel-budget-app```
