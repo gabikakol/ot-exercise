@@ -22,5 +22,4 @@ System testing of the application has been performed manually.
 The application has been downloaded and tested as described in the [user manual](user-manual.md) for the Linux environment. 
 
 ### Functionalities
-
-## Issues left in the application
+All functionalities have been reviewed and tested. Attempts to fill the input fields with incorrect values have been made in order to receive the expected error messages. 
