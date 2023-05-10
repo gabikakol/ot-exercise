@@ -29,15 +29,25 @@ The logical data model of the application consists of the classes `User`, `Trip`
 
 ```mermaid
 classDiagram
-        
+    
+    Expense "*" --> "1" Trip
     Trip "*" --> "1" User
     class User{
         username
         password
     }
     class Trip{
+        trip_id
+        trip_name
+        username
+        duration
     }
     class Expense{
+        expense_id
+        description
+        trip_id
+        amount
+        category
     }
 ```
 
