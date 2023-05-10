@@ -5,7 +5,7 @@ https://ohjelmistotekniikka-hy.github.io/
 Application allows you to track your travel expenses and view statistics. 
 
 ## Documentation
-- [user manual](travel-budget-app/documentation/user_manual.md)
+- [user manual](travel-budget-app/documentation/user-manual.md)
 - [specification](travel-budget-app/documentation/specification.md)
 - [architecture](travel-budget-app/documentation/architecture.md)
 - [testing](travel-budget-app/documentation/testing.md)
