@@ -20,5 +20,6 @@
 |7      | 05.05.2023  | 3         |tests|
 |7      | 07.05.2023  | 5         |tests, UI, documentation|
 |7      | 08.05.2023  | 5         |documentation, testing|
+|7      | 10.05.2023  | 2         |documentation|
 
 Total: 
