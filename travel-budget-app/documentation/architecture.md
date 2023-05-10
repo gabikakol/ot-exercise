@@ -51,6 +51,8 @@ classDiagram
     }
 ```
 
+The diagram below describes the relationship between classes in the program: 
+
 ## Permanent storage of data
 
 ## Files
