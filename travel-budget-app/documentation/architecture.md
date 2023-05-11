@@ -52,6 +52,12 @@ classDiagram
 ```
 
 The diagram below describes the relationship between classes in the program: 
+1. User </br>
+<img src="pictures/user-service-diagram.png"> </br>
+2. Trip </br>
+<img src="pictures/trip-service-diagram.png"> </br>
+3. Expense </br>
+<img src="pictures/expense-service-diagram.png"> </br>
 
 ## Permanent storage of data
 
