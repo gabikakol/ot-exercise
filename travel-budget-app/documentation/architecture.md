@@ -125,6 +125,21 @@ sequenceDiagram
 ```
 
 ## Adding an expense
+```mermaid
+sequenceDiagram
+  actor Expense
+  participant UI
+  participant ExpenseService
+  participant ExpenseRepository
+  participant gabi
+  Expense->>UI: "save" button clicked
+  UI->>ExpenseService: add_expense("sunday lunch", "hj213asd", "16.34", "restaurants")
+  ExpenseService->>expense: Expense(None, "sunday lunch", "hj213asd", "16.34", "restaurants")
+  ExpenseService->>ExpenseRepository: create_expense(expense)
+  ExpenseRepository-->>ExpenseService: expense
+  ExpenseService-->>UI: expense
+  UI->>UI: trip_view()
+```
 
 ## Viewing statistics
 
