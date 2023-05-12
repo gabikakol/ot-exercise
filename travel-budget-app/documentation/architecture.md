@@ -60,10 +60,13 @@ The diagram below describes the relationship between classes in the program:
 <img src="pictures/expense-service-diagram.png"> </br>
 
 ## Permanent storage of data
+Classes `UserRepository`, `TripRepository`, `ExpenseRepository` from the package *repositories* are responsible for permanent storage of the data. They use the `sqlite3` package to create and manage the database.
 
 ## Files
+The application stores user, trip, and expense data in the `database.sqlite` file in the corresponding tables. The database is initialized in the [init_database.py](https://github.com/gabikakol/software-dev-exercises/blob/main/travel-budget-app/src/init_database.py) file. The configuration file [.env](https://github.com/gabikakol/software-dev-exercises/blob/main/travel-budget-app/.env) places at the root of the application defines the name of the database file.
 
 # Main functionalities
+Below, main functionalities of the application are described using sequence diagrams. 
 
 ## Creating a new user
 
