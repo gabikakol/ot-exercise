@@ -107,6 +107,7 @@ sequenceDiagram
 ```
 
 ## Creating a trip
+When the user enters a valid trip name and duration, the application creates a new trip in the following way:
 
 ```mermaid
 sequenceDiagram
@@ -125,6 +126,8 @@ sequenceDiagram
 ```
 
 ## Adding an expense
+When the user enters a valid expense description, cost, and chooses a category, the application creates a new expense in the following way:
+
 ```mermaid
 sequenceDiagram
   actor Expense
