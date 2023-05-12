@@ -108,6 +108,22 @@ sequenceDiagram
 
 ## Creating a trip
 
+```mermaid
+sequenceDiagram
+  actor Trip
+  participant UI
+  participant TripService
+  participant TripRepository
+  participant gabi
+  Trip->>UI: "save" button clicked
+  UI->>TripService: new_trip("snowboarding trip to Ruka", "8")
+  TripService->>trip: Trip(None, "snowboarding trip to Ruka", "gabi", "8")
+  TripService->>TripRepository: create_trip(trip)
+  TripRepository-->>TripService: trip
+  TripService-->>UI: trip
+  UI->>UI: trips_list()
+```
+
 ## Adding an expense
 
 ## Viewing statistics
