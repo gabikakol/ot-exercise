@@ -1,4 +1,4 @@
-from tkinter import ttk, StringVar
+from tkinter import ttk, StringVar, constants
 from services.expense_service import expense_service
 from services.trip_service import trip_service
 from errors.errors_handling import EmptyInputError, NotFloatError, CatNotSelectedError
@@ -34,54 +34,57 @@ class AddExpense:
 
         header_label = ttk.Label(
             master=self._window, text="ADD AN EXPENSE", font=('consolas', 15, "bold"))
-        header_label.grid(padx=5, pady=5)
+        header_label.grid(padx=5, pady=5, column=1)
 
         description_label = ttk.Label(
             master=self._window, text="Description:", font=('consolas', 10, "bold"))
-        description_label.grid(padx=5, pady=5)
+        description_label.grid(padx=5, pady=5, column=1)
 
         self.description_entry = ttk.Entry(master=self._window)
-        self.description_entry.grid(padx=5, pady=5)
+        self.description_entry.grid(padx=5, pady=5, column=1, sticky= constants.EW)
 
         amount_label = ttk.Label(
             master=self._window, text="Cost (EUR):", font=('consolas', 10, "bold"))
-        amount_label.grid(padx=5, pady=5)
+        amount_label.grid(padx=5, pady=5, column=1)
 
         self.amount_entry = ttk.Entry(master=self._window)
-        self.amount_entry.grid(padx=5, pady=5)
+        self.amount_entry.grid(padx=5, pady=5, column=1, sticky= constants.EW)
 
         category_label = ttk.Label(
             master=self._window, text="Category:", font=('consolas', 10, "bold"))
-        category_label.grid(padx=5, pady=5)
+        category_label.grid(padx=5, pady=5, column=1)
 
         categories = ['select an option', 'groceries', 'restaurants', 'cafes', 'bars', 'laundry',
                       'transportation', 'accommodation', 'tickets', 'currency exchange commissions', 'activities', 'other']
         self.cat_var = StringVar(self._root)
         category_menu = ttk.OptionMenu(
             self._window, self.cat_var, *categories, style="cat.TButton")
-        category_menu.grid(padx=5, pady=5)
+        category_menu.grid(padx=5, pady=5, column=1, sticky=constants.EW)
         style.configure("cat.TButton", font=('consolas', 10))
 
         self.error_variable = StringVar(self._window)
         self.error_label = ttk.Label(
             master=self._window, textvariable=self.error_variable, foreground="red", font=('consolas', 10, "bold"))
-        self.error_label.grid(padx=5, pady=5)
+        self.error_label.grid(padx=5, pady=5, column=1)
 
         save_button = ttk.Button(
             master=self._window, text="Save", command=self.handle_add_expense, style="create.TButton")
-        save_button.grid(padx=5, pady=5)
+        save_button.grid(padx=5, pady=5, column=1, sticky=constants.EW)
         style.configure("create.TButton", font=('consolas', 10))
 
         cancel_button = ttk.Button(
             master=self._window, text="Cancel", command=self.trip_view_handle, style="cancel.TButton")
-        cancel_button.grid(padx=5, pady=5)
+        cancel_button.grid(padx=5, pady=5, column=1, sticky= constants.EW)
         style.configure("cancel.TButton", font=('consolas', 10))
 
         self.hide_error()
 
+        self._window.grid_columnconfigure(0,minsize=170)
+        self._window.grid_columnconfigure(1,minsize=380)
+
     def pack(self):
         """Displays the current view."""
-        self._window.pack()
+        self._window.pack(fill=constants.X)
 
     def destroy(self):
         """Resets the current view."""
@@ -101,7 +104,7 @@ class AddExpense:
             self.show_error("Expense description and cost cannot be empty.")
         except NotFloatError:
             self.show_error(
-                "Expense cost has to be a numeric value (use '.' if input is a fraction).")
+                "Expense cost has to be a numeric value.")
         except CatNotSelectedError:
             self.show_error("Category has to be selected.")
 

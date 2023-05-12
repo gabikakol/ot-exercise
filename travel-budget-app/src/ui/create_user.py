@@ -1,4 +1,4 @@
-from tkinter import ttk, StringVar
+from tkinter import ttk, StringVar, constants
 from services.user_service import user_service
 from errors.errors_handling import UserExistsError, PasswordsDontMatchError, EmptyInputError
 
@@ -35,42 +35,45 @@ class CreateUser:
 
         heading_label = ttk.Label(
             master=self._window, text="CREATE A NEW USER", font=('consolas', 15, "bold"))
-        heading_label.grid(padx=5, pady=5)
+        heading_label.grid(padx=5, pady=5, column=1)
 
         username_label = ttk.Label(
             master=self._window, text="Username:", font=('consolas', 10, "bold"))
-        username_label.grid(padx=5, pady=5)
+        username_label.grid(padx=5, pady=5, column=1)
         self._username_entry = ttk.Entry(master=self._window)
-        self._username_entry.grid(padx=5, pady=5)
+        self._username_entry.grid(padx=5, pady=5, column=1, sticky=constants.EW)
 
         password_label1 = ttk.Label(
             master=self._window, text="Password:", font=('consolas', 10, "bold"))
-        password_label1.grid(padx=5, pady=5)
+        password_label1.grid(padx=5, pady=5, column=1)
         self._password_entry1 = ttk.Entry(master=self._window, show="*")
-        self._password_entry1.grid(padx=5, pady=5)
+        self._password_entry1.grid(padx=5, pady=5, column=1, sticky=constants.EW)
 
         password_label2 = ttk.Label(
             master=self._window, text="Repeat password:", font=('consolas', 10, "bold"))
-        password_label2.grid(padx=5, pady=5)
+        password_label2.grid(padx=5, pady=5, column=1)
         self._password_entry2 = ttk.Entry(master=self._window, show="*")
-        self._password_entry2.grid(padx=5, pady=5)
-
-        save_button = ttk.Button(
-            master=self._window, text="Save and log in", command=self.handle_create_user, style="create.TButton")
-        save_button.grid(padx=5, pady=5)
-        style.configure("create.TButton", font=('consolas', 10))
+        self._password_entry2.grid(padx=5, pady=5, column=1, sticky=constants.EW)
 
         self.error_variable = StringVar(self._window)
         self.error_label = ttk.Label(
             master=self._window, textvariable=self.error_variable, foreground="red", font=('consolas', 10, "bold"))
-        self.error_label.grid(padx=5, pady=5)
+        self.error_label.grid(padx=5, pady=5, column=1)
+
+        save_button = ttk.Button(
+            master=self._window, text="Save and log in", command=self.handle_create_user, style="create.TButton")
+        save_button.grid(padx=5, pady=5, column=1, sticky=constants.EW)
+        style.configure("create.TButton", font=('consolas', 10))
 
         cancel_button = ttk.Button(
             master=self._window, text="Cancel", command=self.login_view, style="cancel.TButton")
-        cancel_button.grid(padx=5, pady=5)
+        cancel_button.grid(padx=5, pady=5, column=1, sticky=constants.EW)
         style.configure("cancel.TButton", font=('consolas', 10))
 
         self.hide_error()
+
+        self._window.grid_columnconfigure(0,minsize=180)
+        self._window.grid_columnconfigure(1,minsize=350)
 
     def handle_create_user(self):
         username = self._username_entry.get()
@@ -102,4 +105,4 @@ class CreateUser:
 
     def pack(self):
         """Displays the current view."""
-        self._window.pack()
+        self._window.pack(fill=constants.X)

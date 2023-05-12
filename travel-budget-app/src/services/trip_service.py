@@ -18,7 +18,7 @@ class TripService:
         self.trip_id = None
         self.trip_name = None
 
-    def new_trip(self, username, trip_name, duration):
+    def new_trip(self, trip_name, username, duration):
         """
         Creates a new trip to the database if the inputs are valid.
 

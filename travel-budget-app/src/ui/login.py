@@ -1,4 +1,4 @@
-from tkinter import ttk, StringVar
+from tkinter import ttk, StringVar, constants
 from services.user_service import user_service
 from errors.errors_handling import InvalidCridentialsError
 
@@ -33,36 +33,39 @@ class Login:
 
         heading_label = ttk.Label(
             master=self._window, text="LOGIN", font=('consolas', 15, "bold"))
-        heading_label.grid(padx=5, pady=5)
+        heading_label.grid(padx=5, pady=5, column=1)
 
         username_label = ttk.Label(
             master=self._window, text="Username:", font=('consolas', 10, "bold"))
-        username_label.grid(padx=5, pady=5)
+        username_label.grid(padx=5, pady=5, column=1)
         self._username_entry = ttk.Entry(master=self._window)
-        self._username_entry.grid(padx=5, pady=5)
+        self._username_entry.grid(padx=5, pady=5, column=1, sticky=constants.EW)
 
         password_label = ttk.Label(
             master=self._window, text="Password:", font=('consolas', 10, "bold"))
-        password_label.grid(padx=5, pady=5)
+        password_label.grid(padx=5, pady=5, column=1)
         self._password_entry = ttk.Entry(master=self._window, show="*")
-        self._password_entry.grid(padx=5, pady=5)
+        self._password_entry.grid(padx=5, pady=5, column=1, sticky=constants.EW)
 
         self.error_variable = StringVar(self._window)
         self.error_label = ttk.Label(
             master=self._window, textvariable=self.error_variable, foreground="red", font=('consolas', 10, "bold"))
-        self.error_label.grid(padx=5, pady=5)
+        self.error_label.grid(padx=5, pady=5, column=1)
 
         login_button = ttk.Button(
             master=self._window, text="Login", command=self.handle_login, style="login.TButton")
-        login_button.grid(padx=5, pady=5)
-        style.configure("login.TButton", font=('consolas', 10))
+        login_button.grid(padx=5, pady=5, column=1, sticky=constants.EW)
+        style.configure("login.TButton", font=('consolas', 10), background="black", foreground="white")
 
         create_user_button = ttk.Button(
             master=self._window, text="Create a new user", command=self.create_user, style="create.TButton")
-        create_user_button.grid(padx=5, pady=5)
-        style.configure("create.TButton", font=('consolas', 10))
+        create_user_button.grid(padx=5, pady=5, column=1, sticky=constants.EW)
+        style.configure("create.TButton", font=('consolas', 10), background="black", foreground="white")
 
         self.hide_error()
+
+        self._window.grid_columnconfigure(0,minsize=200)
+        self._window.grid_columnconfigure(1,minsize=300)
 
     def handle_login(self):
         username = self._username_entry.get()
@@ -87,4 +90,4 @@ class Login:
 
     def pack(self):
         """Resets the current view."""
-        self._window.pack()
+        self._window.pack(fill=constants.X)

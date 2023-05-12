@@ -1,4 +1,4 @@
-from tkinter import ttk, StringVar
+from tkinter import ttk, StringVar, constants
 from services.trip_service import trip_service
 from services.user_service import user_service
 from errors.errors_handling import EmptyInputError, NotIntegerError
@@ -32,40 +32,43 @@ class NewTrip:
 
         header_label = ttk.Label(
             master=self._window, text="CREATE A NEW TRIP", font=('consolas', 15, "bold"))
-        header_label.grid(padx=5, pady=5)
+        header_label.grid(padx=5, pady=5, column=1)
 
         name_label = ttk.Label(master=self._window,
                                text="Name:", font=('consolas', 10, "bold"))
-        name_label.grid(padx=5, pady=5)
+        name_label.grid(padx=5, pady=5, column=1)
         self.name_entry = ttk.Entry(master=self._window)
-        self.name_entry.grid(padx=5, pady=5)
+        self.name_entry.grid(padx=5, pady=5, column=1, sticky=constants.EW)
 
         duration_label = ttk.Label(
             master=self._window, text="Duration (days):", font=('consolas', 10, "bold"))
-        duration_label.grid(padx=5, pady=5)
+        duration_label.grid(padx=5, pady=5, column=1)
         self.duration_entry = ttk.Entry(master=self._window)
-        self.duration_entry.grid(padx=5, pady=5)
+        self.duration_entry.grid(padx=5, pady=5, column=1, sticky=constants.EW)
 
         self.error_variable = StringVar(self._window)
         self.error_label = ttk.Label(
             master=self._window, textvariable=self.error_variable, foreground="red", font=('consolas', 10, "bold"))
-        self.error_label.grid(padx=5, pady=5)
+        self.error_label.grid(padx=5, pady=5, column=1)
 
         save_button = ttk.Button(
             master=self._window, text="Save", command=self.handle_new_trip, style="save.TButton")
-        save_button.grid(padx=5, pady=5)
+        save_button.grid(padx=5, pady=5, column=1, sticky=constants.EW)
         style.configure("save.TButton", font=('consolas', 10))
 
         cancel_button = ttk.Button(
             master=self._window, text="Cancel", command=self.trips_list_handle, style="cancel.TButton")
-        cancel_button.grid(padx=5, pady=5)
+        cancel_button.grid(padx=5, pady=5, column=1, sticky=constants.EW)
         style.configure("cancel.TButton", font=('consolas', 10))
 
         self.hide_error()
 
+        self._window.grid_columnconfigure(0,minsize=190)
+        self._window.grid_columnconfigure(1,minsize=330)
+
     def pack(self):
         """Diplays the current view."""
-        self._window.pack()
+        self._window.pack(fill=constants.X)
 
     def destroy(self):
         """Resets the current view."""
