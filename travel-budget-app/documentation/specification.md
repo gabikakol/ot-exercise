@@ -10,6 +10,7 @@ The program is used by one user at the time. Each user has an unique username an
 <img src="pictures/UI-plan.jpg"> 
 
 ## Functionality
+On the top of each window, current time and date are displayed. 
 
 ### Before login
 - New user:
