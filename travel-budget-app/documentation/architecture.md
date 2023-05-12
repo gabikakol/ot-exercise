@@ -77,6 +77,7 @@ sequenceDiagram
   participant UI
   participant UserService
   participant UserRepository
+  
   User->>UI: "login" button clicked
   UI->>UserService: login("gabi", "123")
   UserService->>UserRepository: find_user("gabi")
@@ -90,16 +91,18 @@ When the user enters a unique username and two valid, identical passwords, the a
 
 ```mermaid
 sequenceDiagram
+
   actor User
   participant UI
   participant UserService
   participant UserRepository
   participant billie
+  
   User->>UI: "create user" button clicked
   UI->>UserService: new_user("billie", "abc123", "abc123")
   UserService->>UserRepository: find_user("billie")
   UserRepository-->>UserService: None
-  UserService->>billie: User("billie", "abc123")
+  UserService->>user: User("billie", "abc123")
   UserService->>UserRepository: create_user(billie)
   UserRepository-->>UserService: user
   UserService-->>UI: user
@@ -115,7 +118,7 @@ sequenceDiagram
   participant UI
   participant TripService
   participant TripRepository
-  participant gabi
+  participant trip
   Trip->>UI: "save" button clicked
   UI->>TripService: new_trip("snowboarding trip to Ruka", "8")
   TripService->>trip: Trip(None, "snowboarding trip to Ruka", "gabi", "8")
@@ -130,11 +133,13 @@ When the user enters a valid expense description, cost, and chooses a category, 
 
 ```mermaid
 sequenceDiagram
+
   actor Expense
   participant UI
   participant ExpenseService
   participant ExpenseRepository
-  participant gabi
+  participant expense
+  
   Expense->>UI: "save" button clicked
   UI->>ExpenseService: add_expense("sunday lunch", "hj213asd", "16.34", "restaurants")
   ExpenseService->>expense: Expense(None, "sunday lunch", "hj213asd", "16.34", "restaurants")
@@ -148,8 +153,44 @@ sequenceDiagram
 The application shows 2 types of statistics, each in a separate window. User statistics are the general statistics based an all user's trips and expenses, whereas trip statistics are only based on the data of the particular trip. 
 
 ### User statistics
-User statistics are calculated in the `TripStats` class from the UI package. The data is retrieved from the database using the following classes and functions:
+User statistics are calculated in the `UserStats` class from the UI package. The data is retrieved from the database using the following classes and functions:
+
+```mermaid
+sequenceDiagram
+    actor User
+    participant UI
+    participant UserService
+    participant TripRepository
+    participant ExpenseRepository
+    
+    User->>UI: "user statistics" button clicked
+    UI->>UserService: get.username()
+    UserService-->>UI: self.username
+    UI->>TripRepository: find_all_trips()
+    TripRepository-->>UI: self.trips
+    UI->>ExpenseRepository: find_all_expenses()
+    ExpenseRepository-->>UI: self.expenses
+```
 
 ### Trip statistics
+User statistics are calculated in the `TripStats` class from the UI package. The data is retrieved from the database using the following classes and functions:
+```mermaid
+sequenceDiagram
+    actor Trip
+    participant UI
+    participant TripService
+    participant TripRepository
+    participant ExpenseRepository
+    
+    User->>UI: "trip statistics" button clicked
+    UI->>UserService: get.trip_name()
+    UserService-->>UI: self.trip_name
+    UI->>UserService: get.trip_id()
+    UserService-->>UI: self.trip_id
+    UI->>TripRepository: find_trip(self.trip_id)
+    TripRepository-->>UI: self.current_trip
+    UI->>ExpenseRepository: find_all_expenses()
+    ExpenseRepository-->>UI: self.trip_expenses
+```
 
 ## Other functionalities
