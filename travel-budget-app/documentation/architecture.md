@@ -145,8 +145,10 @@ sequenceDiagram
 ```
 
 ## Viewing statistics
+The application shows 2 types of statistics, each in a separate window. User statistics are the general statistics based an all user's trips and expenses, whereas trip statistics are only based on the data of the particular trip. 
 
 ### User statistics
+User statistics are calculated in the `TripStats` class from the UI package. The data is retrieved from the database using the following classes and functions:
 
 ### Trip statistics
 
