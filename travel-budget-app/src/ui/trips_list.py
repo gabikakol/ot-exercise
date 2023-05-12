@@ -41,7 +41,7 @@ class TripsList:
         header_label.grid(padx=5, pady=5, column=1)
 
         trips = trip_repository.find_all_trips()
-        row = 1
+        row = 2
         empty = True
         for trip in trips:
             if trip.username == self.username:

@@ -25,7 +25,7 @@ class TripStats:
         self.expenses = self.find_trip_expenses()
         self.current_trip = trip_repository.find_trip(self.trip_id)
         self.current_time = datetime.datetime.now()
-        
+
         self.start()
 
     def start(self):
@@ -33,7 +33,7 @@ class TripStats:
         style = ttk.Style()
 
         current_date_label = ttk.Label(master=self._window, text=self.current_time.strftime('%H:%M, %A, %dth %B %Y'), foreground="#5A5A5A", font=('consolas', 10))
-        current_date_label.grid(padx=5, pady=5, column=1)
+        current_date_label.grid(padx=5, pady=5, column=0)
 
         stats_label = ttk.Label(
             master=self._window, text=f"Statistics of the {self.trip_name} trip", font=('consolas', 15, "bold"))
