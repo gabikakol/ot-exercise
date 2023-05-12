@@ -193,4 +193,5 @@ sequenceDiagram
     ExpenseRepository-->>UI: self.trip_expenses
 ```
 
-## Other functionalities
+## Weaknesses left in the program's structure
+The main weakness is user interface. There is a lot of work to be done on the UI design, especially the *trips_list* UI window. The list of the trips and buttons are not user-friendly designed and placed, it might be confusing for some users. 
