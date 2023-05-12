@@ -194,4 +194,4 @@ sequenceDiagram
 ```
 
 ## Weaknesses left in the program's structure
-The main weakness is user interface. There is a lot of work to be done on the UI design, especially the *trips_list* UI window. The list of the trips and buttons are not user-friendly designed and placed, it might be confusing for some users. 
+The main weakness is user interface. There is a lot of work to be done on the UI design, especially for viewing list of the trips, trip's expenses, and statistics. So far, these are only listed one by one. The list of the trips should have a scroll bar (for cases when user adds big number of trips), and the trip's expenses and statistics should be displayed in a table. 
