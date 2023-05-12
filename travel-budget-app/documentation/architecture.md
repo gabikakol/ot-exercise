@@ -52,11 +52,11 @@ classDiagram
 ```
 
 The diagram below describes the relationship between classes in the program: 
-1. for User </br>
+1. for `User`: </br>
 <img src="pictures/user-service-diagram.png"> </br>
-2. for Trip </br>
+2. for `Trip`: </br>
 <img src="pictures/trip-service-diagram.png"> </br>
-3. for Expense </br>
+3. for `Expense`: </br>
 <img src="pictures/expense-service-diagram.png"> </br>
 
 ## Permanent storage of data
