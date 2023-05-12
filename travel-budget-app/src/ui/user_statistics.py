@@ -31,7 +31,8 @@ class UserStats:
         self._window = ttk.Frame(master=self._root)
         style = ttk.Style()
 
-        current_date_label = ttk.Label(master=self._window, text=self.current_time.strftime('%H:%M, %A, %dth %B %Y'), foreground="#5A5A5A", font=('consolas', 10))
+        current_date_label = ttk.Label(master=self._window, text=self.current_time.strftime(
+            '%H:%M, %A, %dth %B %Y'), foreground="#5A5A5A", font=('consolas', 10))
         current_date_label.grid(padx=5, pady=5, column=0)
 
         stats_label = ttk.Label(master=self._window,
