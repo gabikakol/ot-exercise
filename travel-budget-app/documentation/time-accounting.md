@@ -21,5 +21,7 @@
 |7      | 07.05.2023  | 5         |tests, UI, documentation|
 |7      | 08.05.2023  | 5         |documentation, testing|
 |7      | 10.05.2023  | 2         |documentation|
+|7      | 11.05.2023  | 1         |documentation|
+|7      | 12.05.2023  | 4         |documentation, tesing, fixing bugs|
 
-Total: 
+Total: 68h
