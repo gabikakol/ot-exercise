@@ -68,7 +68,43 @@ The application stores user, trip, and expense data in the `database.sqlite` fil
 # Main functionalities
 Below, main functionalities of the application are described using sequence diagrams. 
 
+## User login
+When the user enters valid username and password, the application logs the user in the following way: 
+
+```mermaid
+sequenceDiagram
+  actor User
+  participant UI
+  participant UserService
+  participant UserRepository
+  User->>UI: "login" button clicked
+  UI->>UserService: login("gabi", "123")
+  UserService->>UserRepository: find_user("gabi")
+  UserRepository-->>UserService: user
+  UserService-->>UI: user
+  UI->UI: user_menu()
+```
+
 ## Creating a new user
+When the user enters a unique username and two valid, identical passwords, the application creates a new user in the following way:
+
+```mermaid
+sequenceDiagram
+  actor User
+  participant UI
+  participant UserService
+  participant UserRepository
+  participant billie
+  User->>UI: "create user" button clicked
+  UI->>UserService: new_user("billie", "abc123", "abc123")
+  UserService->>UserRepository: find_user("billie")
+  UserRepository-->>UserService: None
+  UserService->>billie: User("billie", "abc123")
+  UserService->>UserRepository: create_user(billie)
+  UserRepository-->>UserService: user
+  UserService-->>UI: user
+  UI->>UI: user_menu()
+```
 
 ## Creating a trip
 
