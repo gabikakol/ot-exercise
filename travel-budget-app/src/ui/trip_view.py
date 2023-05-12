@@ -44,26 +44,29 @@ class TripView:
                 empty = False
         if empty:
             none_label = ttk.Label(
-                master=self._window, text="No expenses yet", foreground = "red", font=('consolas', 10, "italic"))
+                master=self._window, text="No expenses yet", foreground="red", font=('consolas', 10, "italic"))
             none_label.grid(padx=5, pady=5, column=1)
 
         add_button = ttk.Button(master=self._window,
                                 text="Add expense", command=self.add_expense, style="add.TButton")
         add_button.grid(padx=5, pady=5, column=1, sticky=constants.EW)
-        style.configure('add.TButton', font=('consolas', 10))
+        style.configure('add.TButton', font=('consolas', 10),
+                        background="#5A5A5A", foreground="white")
 
         stats_button = ttk.Button(
             master=self._window, text="Trip statistics", command=self.trip_stats_handle, style="stats.TButton")
         stats_button.grid(padx=5, pady=5, column=1, sticky=constants.EW)
-        style.configure('stats.TButton', font=('consolas', 10))
+        style.configure('stats.TButton', font=('consolas', 10),
+                        background="#5A5A5A", foreground="white")
 
         back_button = ttk.Button(
             master=self._window, text="Back to trips menu", command=self.trips_list_handle, style='back.TButton')
         back_button.grid(padx=5, pady=5, column=1, sticky=constants.EW)
-        style.configure('back.TButton', font=('consolas', 10))
+        style.configure('back.TButton', font=('consolas', 10),
+                        background="#5A5A5A", foreground="white")
 
-        self._window.grid_columnconfigure(0,minsize=0)
-        self._window.grid_columnconfigure(1,minsize=700)
+        self._window.grid_columnconfigure(0, minsize=0)
+        self._window.grid_columnconfigure(1, minsize=700)
 
     def pack(self):
         """Displays the current view."""

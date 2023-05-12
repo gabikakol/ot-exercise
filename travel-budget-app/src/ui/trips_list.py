@@ -51,16 +51,18 @@ class TripsList:
         new_trip_button = ttk.Button(
             master=self._window, text="Create new trip", command=self.new_trip_handle, style="new.TButton")
         new_trip_button.grid(padx=5, pady=5, column=1, sticky=constants.EW)
-        style.configure('new.TButton', font=('consolas', 10))
+        style.configure('new.TButton', font=('consolas', 10),
+                        background="#5A5A5A", foreground="white")
 
         back_button = ttk.Button(
             master=self._window, text="Back to menu", command=self.back_handle, style='back.TButton')
         back_button.grid(padx=5, pady=5, column=1, sticky=constants.EW)
-        style.configure('back.TButton', font=('consolas', 10))
+        style.configure('back.TButton', font=('consolas', 10),
+                        background="#5A5A5A", foreground="white")
 
-        self._window.grid_columnconfigure(0,minsize=150)
-        self._window.grid_columnconfigure(1,minsize=400)
-        self._window.grid_columnconfigure(3,minsize=150)
+        self._window.grid_columnconfigure(0, minsize=150)
+        self._window.grid_columnconfigure(1, minsize=400)
+        self._window.grid_columnconfigure(3, minsize=150)
 
     def pack(self):
         """Displays the current view."""
@@ -78,8 +80,10 @@ class TripsList:
 
         show_more_button = ttk.Button(
             master=self._window, text="show more", command=lambda: self.show_more_handle(trip), style='show.TButton')
-        show_more_button.grid(row=row, column=2, padx=5, pady=5, sticky=constants.EW)
-        style.configure('show.TButton', font=('consolas', 10))
+        show_more_button.grid(row=row, column=2, padx=5,
+                              pady=5, sticky=constants.EW)
+        style.configure('show.TButton', font=('consolas', 10),
+                        background="#5A5A5A", foreground="white")
 
     def show_more_handle(self, trip):
         trip_service.trip_login(trip.trip_id, trip.trip_name)

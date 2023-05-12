@@ -41,14 +41,15 @@ class AddExpense:
         description_label.grid(padx=5, pady=5, column=1)
 
         self.description_entry = ttk.Entry(master=self._window)
-        self.description_entry.grid(padx=5, pady=5, column=1, sticky= constants.EW)
+        self.description_entry.grid(
+            padx=5, pady=5, column=1, sticky=constants.EW)
 
         amount_label = ttk.Label(
             master=self._window, text="Cost (EUR):", font=('consolas', 10, "bold"))
         amount_label.grid(padx=5, pady=5, column=1)
 
         self.amount_entry = ttk.Entry(master=self._window)
-        self.amount_entry.grid(padx=5, pady=5, column=1, sticky= constants.EW)
+        self.amount_entry.grid(padx=5, pady=5, column=1, sticky=constants.EW)
 
         category_label = ttk.Label(
             master=self._window, text="Category:", font=('consolas', 10, "bold"))
@@ -60,7 +61,8 @@ class AddExpense:
         category_menu = ttk.OptionMenu(
             self._window, self.cat_var, *categories, style="cat.TButton")
         category_menu.grid(padx=5, pady=5, column=1, sticky=constants.EW)
-        style.configure("cat.TButton", font=('consolas', 10))
+        style.configure("cat.TButton", font=('consolas', 10),
+                        background="white", foreground="black")
 
         self.error_variable = StringVar(self._window)
         self.error_label = ttk.Label(
@@ -70,17 +72,19 @@ class AddExpense:
         save_button = ttk.Button(
             master=self._window, text="Save", command=self.handle_add_expense, style="create.TButton")
         save_button.grid(padx=5, pady=5, column=1, sticky=constants.EW)
-        style.configure("create.TButton", font=('consolas', 10))
+        style.configure("create.TButton", font=('consolas', 10),
+                        background="#5A5A5A", foreground="white")
 
         cancel_button = ttk.Button(
             master=self._window, text="Cancel", command=self.trip_view_handle, style="cancel.TButton")
-        cancel_button.grid(padx=5, pady=5, column=1, sticky= constants.EW)
-        style.configure("cancel.TButton", font=('consolas', 10))
+        cancel_button.grid(padx=5, pady=5, column=1, sticky=constants.EW)
+        style.configure("cancel.TButton", font=('consolas', 10),
+                        background="#5A5A5A", foreground="white")
 
         self.hide_error()
 
-        self._window.grid_columnconfigure(0,minsize=170)
-        self._window.grid_columnconfigure(1,minsize=380)
+        self._window.grid_columnconfigure(0, minsize=170)
+        self._window.grid_columnconfigure(1, minsize=380)
 
     def pack(self):
         """Displays the current view."""

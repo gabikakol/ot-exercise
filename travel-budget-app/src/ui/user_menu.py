@@ -40,25 +40,29 @@ class UserMenu:
         my_trips_button = ttk.Button(
             master=self._window, text="My trips", command=self.my_trips_handle, style="my.TButton")
         my_trips_button.grid(padx=5, pady=5, column=1, sticky=constants.EW)
-        style.configure('my.TButton', font=('consolas', 10))
+        style.configure('my.TButton', font=('consolas', 10),
+                        background="#5A5A5A", foreground="white")
 
         new_trip_button = ttk.Button(
             master=self._window, text="Create new trip", command=self.new_trip_handle, style="new.TButton")
         new_trip_button.grid(padx=5, pady=5, column=1, sticky=constants.EW)
-        style.configure('new.TButton', font=('consolas', 10))
+        style.configure('new.TButton', font=('consolas', 10),
+                        background="#5A5A5A", foreground="white")
 
         stats_button = ttk.Button(
             master=self._window, text="User statistics", command=self.user_stats_handle, style="stats.TButton")
         stats_button.grid(padx=5, pady=5, column=1, sticky=constants.EW)
-        style.configure('stats.TButton', font=('consolas', 10))
+        style.configure('stats.TButton', font=('consolas', 10),
+                        background="#5A5A5A", foreground="white")
 
         logout_button = ttk.Button(
             master=self._window, text="Log out", command=self.logout_handle, style='logout.TButton')
         logout_button.grid(padx=5, pady=5, column=1, sticky=constants.EW)
-        style.configure('logout.TButton', font=('consolas', 10))
+        style.configure('logout.TButton', font=('consolas', 10),
+                        background="#5A5A5A", foreground="white")
 
-        self._window.grid_columnconfigure(0,minsize=200)
-        self._window.grid_columnconfigure(1,minsize=300)
+        self._window.grid_columnconfigure(0, minsize=200)
+        self._window.grid_columnconfigure(1, minsize=300)
 
     def pack(self):
         """Displays the current view."""

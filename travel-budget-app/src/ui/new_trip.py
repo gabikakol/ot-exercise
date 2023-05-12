@@ -54,17 +54,19 @@ class NewTrip:
         save_button = ttk.Button(
             master=self._window, text="Save", command=self.handle_new_trip, style="save.TButton")
         save_button.grid(padx=5, pady=5, column=1, sticky=constants.EW)
-        style.configure("save.TButton", font=('consolas', 10))
+        style.configure("save.TButton", font=('consolas', 10),
+                        background="#5A5A5A", foreground="white")
 
         cancel_button = ttk.Button(
             master=self._window, text="Cancel", command=self.trips_list_handle, style="cancel.TButton")
         cancel_button.grid(padx=5, pady=5, column=1, sticky=constants.EW)
-        style.configure("cancel.TButton", font=('consolas', 10))
+        style.configure("cancel.TButton", font=('consolas', 10),
+                        background="#5A5A5A", foreground="white")
 
         self.hide_error()
 
-        self._window.grid_columnconfigure(0,minsize=190)
-        self._window.grid_columnconfigure(1,minsize=330)
+        self._window.grid_columnconfigure(0, minsize=190)
+        self._window.grid_columnconfigure(1, minsize=330)
 
     def pack(self):
         """Diplays the current view."""
