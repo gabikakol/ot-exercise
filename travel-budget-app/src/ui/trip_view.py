@@ -1,6 +1,7 @@
 from tkinter import ttk, constants
 from services.trip_service import trip_service
 from repositories.expense_repository import expense_repository
+import datetime
 
 
 class TripView:
@@ -24,6 +25,7 @@ class TripView:
         self.trip_name = trip_service.get_trip_name()
         self.trip_id = trip_service.get_trip_id()
         self.trip_stats_handle = trip_stats
+        self.current_time = datetime.datetime.now()
 
         self.start()
 
@@ -31,6 +33,9 @@ class TripView:
 
         self._window = ttk.Frame(master=self._root)
         style = ttk.Style()
+
+        current_date_label = ttk.Label(master=self._window, text=self.current_time.strftime('%H:%M, %A, %dth %B %Y'), foreground="#5A5A5A", font=('consolas', 10))
+        current_date_label.grid(padx=5, pady=5, column=1)
 
         header_label = ttk.Label(
             master=self._window, text=f"Expenses of the {self.trip_name} trip", font=('consolas', 15, "bold"))

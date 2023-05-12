@@ -2,6 +2,7 @@ from tkinter import ttk, StringVar, constants
 from services.trip_service import trip_service
 from services.user_service import user_service
 from errors.errors_handling import EmptyInputError, NotIntegerError
+import datetime
 
 
 class NewTrip:
@@ -23,12 +24,16 @@ class NewTrip:
         self.duration_entry = None
         self.error_variable = None
         self.error_label = None
+        self.current_time = datetime.datetime.now()
 
         self.start()
 
     def start(self):
         self._window = ttk.Frame(master=self._root)
         style = ttk.Style()
+
+        current_date_label = ttk.Label(master=self._window, text=self.current_time.strftime('%H:%M, %A, %dth %B %Y'), foreground="#5A5A5A", font=('consolas', 10))
+        current_date_label.grid(padx=5, pady=5, column=1)
 
         header_label = ttk.Label(
             master=self._window, text="CREATE A NEW TRIP", font=('consolas', 15, "bold"))

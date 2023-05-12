@@ -1,5 +1,6 @@
 from tkinter import ttk, constants
 from services.user_service import user_service
+import datetime
 
 
 class UserMenu:
@@ -25,6 +26,7 @@ class UserMenu:
         self.username = user_service.get_username()
         self.new_trip_handle = new_trip
         self.user_stats_handle = user_stats
+        self.current_time = datetime.datetime.now()
 
         self.start()
 
@@ -32,6 +34,9 @@ class UserMenu:
 
         self._window = ttk.Frame(master=self._root)
         style = ttk.Style()
+
+        current_date_label = ttk.Label(master=self._window, text=self.current_time.strftime('%H:%M, %A, %dth %B %Y'), foreground="#5A5A5A", font=('consolas', 10))
+        current_date_label.grid(padx=5, pady=5, column=1)
 
         user_label = ttk.Label(master=self._window,
                                text=f"Hello {self.username}!", font=('consolas', 15, "bold"))

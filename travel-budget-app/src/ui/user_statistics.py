@@ -2,6 +2,7 @@ from tkinter import ttk, constants
 from services.user_service import user_service
 from repositories.trip_repository import trip_repository
 from repositories.expense_repository import expense_repository
+import datetime
 
 
 class UserStats:
@@ -22,12 +23,16 @@ class UserStats:
         self.user_menu_handle = user_menu
         self.trips = trip_repository.find_all_trips()
         self.expenses = expense_repository.find_all_expenses()
+        self.current_time = datetime.datetime.now()
 
         self.start()
 
     def start(self):
         self._window = ttk.Frame(master=self._root)
         style = ttk.Style()
+
+        current_date_label = ttk.Label(master=self._window, text=self.current_time.strftime('%H:%M, %A, %dth %B %Y'), foreground="#5A5A5A", font=('consolas', 10))
+        current_date_label.grid(padx=5, pady=5, column=1)
 
         stats_label = ttk.Label(master=self._window,
                                 text=f"Statistics for {self.username}", font=('consolas', 15, "bold"))
